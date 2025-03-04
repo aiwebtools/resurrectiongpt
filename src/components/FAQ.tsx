@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { X, HelpCircle, MessageCircle, ExternalLink } from "lucide-react";
+import { X, HelpCircle, MessageCircle, ExternalLink, ArrowLeft } from "lucide-react";
 
 interface FAQProps {
   onClose: () => void;
@@ -107,6 +107,30 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
               (475) 800-8096
             </a>
           </div>
+        </div>
+
+        <div className="mt-8 flex justify-between items-center">
+          <Button 
+            variant="outline" 
+            onClick={onClose}
+            className="border-resurrection-primary/30 text-resurrection-primary hover:bg-resurrection-primary/10 flex items-center"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Home
+          </Button>
+          
+          <a 
+            href="https://chatgpt.com/g/g-dfGHDaPWK-resurrection-gpt" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button 
+              className="bg-resurrection-primary hover:bg-resurrection-primary/80 text-white"
+            >
+              Begin Your Spiritual Connection
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </Button>
+          </a>
         </div>
       </div>
     </motion.div>
