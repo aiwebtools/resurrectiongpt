@@ -16,10 +16,10 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="w-full py-6 px-4 text-resurrection-foreground/50 relative z-10 border-t border-white/5">
+    <footer className="w-full py-4 px-4 text-resurrection-foreground/50 text-xs relative z-10">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row md:justify-between items-center mb-6">
-          <div className="mb-6 md:mb-0">
+        <div className="flex flex-col md:flex-row md:justify-between items-center mb-4">
+          <div className="mb-4 md:mb-0">
             <div className="flex items-center">
               <h2 className="text-xl font-serif font-light tracking-wide text-resurrection-foreground flex items-center">
                 <span className="text-gradient-animate mr-2">🔮</span> 
@@ -38,62 +38,63 @@ const Footer: React.FC = () => {
             </a>
           </div>
           
-          <div className="grid grid-cols-2 gap-x-4 gap-y-2 md:flex md:gap-4 text-[10px] md:text-xs">
+          <div className="flex justify-center gap-4">
             <a 
               href="#disclaimer" 
               className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
             >
-              <FileText size={10} className="mr-1 group-hover:animate-pulse-slow" />
-              <span className="group-hover:underline">Disclaimer</span>
+              <FileText size={12} className="mr-1 group-hover:animate-pulse-slow" />
+              <span className="group-hover:underline">Full Disclaimer</span>
             </a>
+            <span>|</span>
             <a 
               href="https://openai.com/policies/privacy-policy/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-resurrection-primary transition-colors duration-300 group flex items-center"
+              className="hover:text-resurrection-primary transition-colors duration-300 group"
             >
-              <ExternalLink size={10} className="mr-1 group-hover:rotate-45 transition-transform duration-300" />
-              <span className="group-hover:underline">Privacy</span>
+              <span className="group-hover:underline">Privacy Policy</span>
             </a>
+            <span>|</span>
             <a 
               href="https://aiwebtools.ai/terms-of-services" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-resurrection-primary transition-colors duration-300 group flex items-center"
+              className="hover:text-resurrection-primary transition-colors duration-300 group"
             >
-              <ExternalLink size={10} className="mr-1 group-hover:rotate-45 transition-transform duration-300" />
-              <span className="group-hover:underline">Terms</span>
+              <span className="group-hover:underline">Terms of Service</span>
             </a>
+            <span>|</span>
             <a 
               href="#faq" 
-              className="hover:text-resurrection-primary transition-colors duration-300 group flex items-center"
+              className="hover:text-resurrection-primary transition-colors duration-300 group"
             >
-              <HelpCircle size={10} className="mr-1 group-hover:animate-pulse-slow" />
               <span className="group-hover:underline">FAQ</span>
             </a>
+            <span>|</span>
             <a 
               href="https://www.AiWebTools.Ai" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group col-span-2 mt-1 md:mt-0 md:col-span-1"
+              className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
             >
-              <ExternalLink size={10} className="mr-1 group-hover:rotate-45 transition-transform duration-300" />
+              <ExternalLink size={12} className="mr-1 group-hover:rotate-45 transition-transform duration-300" />
               <span className="group-hover:underline">More AI Tools</span>
             </a>
           </div>
         </div>
         
-        <div className="flex flex-col md:flex-row gap-4 md:justify-between items-center">
+        <div className="flex flex-col md:flex-row md:justify-between items-center">
           <a 
             href="https://www.aiwebtools.ai" 
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-resurrection-primary transition-colors duration-300 text-[10px] md:text-xs order-2 md:order-1"
+            className="hover:text-resurrection-primary transition-colors duration-300"
           >
             © 2025 AI WEB TOOLS LLC. All rights reserved.
           </a>
           
-          <div className="order-1 md:order-2 mb-4 md:mb-0">
+          <div className="mt-3 md:mt-0">
             <a 
               href="https://www.aiwebtools.ai" 
               target="_blank"
@@ -103,34 +104,34 @@ const Footer: React.FC = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground text-[10px] md:text-xs py-1 h-auto"
+                className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground"
               >
-                <Server className="mr-2 h-3 w-3 md:h-4 md:w-4" />
+                <Server className="mr-2 h-4 w-4" />
                 AI TOOL MAINFRAME
               </Button>
             </a>
           </div>
         </div>
         
-        <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-[10px] md:text-xs flex-wrap">
+        <p className="mt-3 flex items-center justify-center gap-4">
           <a 
             href="mailto:support@ai-webtools.com" 
             onClick={handleEmailClick}
             className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
           >
-            <Mail size={10} className="mr-1 group-hover:translate-y-[-2px] transition-transform duration-300" />
+            <Mail size={12} className="mr-1 group-hover:translate-y-[-2px] transition-transform duration-300" />
             <span className="group-hover:underline">support@ai-webtools.com</span>
           </a> 
-          <span className="hidden sm:inline">|</span>
+          <span>|</span>
           <a 
             href="tel:+14758008096" 
             onClick={handlePhoneClick}
             className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
           >
-            <Phone size={10} className="mr-1 group-hover:rotate-12 transition-transform duration-300" />
+            <Phone size={12} className="mr-1 group-hover:rotate-12 transition-transform duration-300" />
             <span className="group-hover:underline">(475) 800-8096</span>
           </a>
-        </div>
+        </p>
       </div>
     </footer>
   );

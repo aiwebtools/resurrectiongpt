@@ -30,25 +30,25 @@ const UserForm: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto px-4 sm:px-0">
+    <div className="w-full max-w-md mx-auto">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="glass-card rounded-xl p-4 sm:p-6 md:p-8 animate-fade-in shadow-xl dark-glow"
+        className="glass-card rounded-xl p-6 md:p-8 animate-fade-in shadow-xl dark-glow"
       >
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-center mb-3 text-gradient-animate">
+        <h2 className="text-2xl md:text-3xl font-serif text-center mb-3 text-gradient-animate">
           Welcome to your journey
         </h2>
         
-        <p className="mb-4 sm:mb-6 text-center text-resurrection-foreground/80 text-xs sm:text-sm">
+        <p className="mb-6 text-center text-resurrection-foreground/80 text-sm">
           Before we begin your spiritual connection, we'll need to gather some information. 
           This helps create an authentic and meaningful experience.
         </p>
         
-        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="user-name" className="text-resurrection-foreground/80 text-sm">
+            <Label htmlFor="user-name" className="text-resurrection-foreground/80">
               What is your name?
             </Label>
             <Input
@@ -60,23 +60,23 @@ const UserForm: React.FC = () => {
               className="bg-white/5 border-resurrection-primary/20 focus:border-resurrection-primary/50 transition-all duration-300 text-resurrection-foreground"
               autoComplete="off"
             />
-            {error && <p className="text-red-500 text-xs sm:text-sm mt-1">{error}</p>}
+            {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
           </div>
           
-          <div className="pt-1 sm:pt-2 text-center text-resurrection-foreground/70 text-xs">
+          <div className="pt-2 text-center text-resurrection-foreground/70 text-sm">
             <p>Next, you'll answer questions about your departed loved one.</p>
             <p className="mt-1 italic">We'll gather details about their personality, memories you shared, and what made them special.</p>
           </div>
           
           <Button 
             type="submit" 
-            className="w-full bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all duration-300 py-4 sm:py-6 rounded-md btn-glow"
+            className="w-full bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all duration-300 py-6 rounded-md btn-glow"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center">
                 <svg 
-                  className="animate-spin -ml-1 mr-3 h-4 w-4 sm:h-5 sm:w-5 text-white" 
+                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" 
                   xmlns="http://www.w3.org/2000/svg" 
                   fill="none" 
                   viewBox="0 0 24 24"
@@ -100,14 +100,14 @@ const UserForm: React.FC = () => {
             ) : (
               <span className="flex items-center">
                 <span>Continue to Questions</span>
-                <Sparkles className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                <Sparkles className="ml-2 h-5 w-5" />
               </span>
             )}
           </Button>
         </form>
       </motion.div>
       
-      <p className="text-center text-resurrection-foreground/60 mt-3 text-[10px] sm:text-xs px-4">
+      <p className="text-center text-resurrection-foreground/60 mt-4 text-xs px-4">
         Your experience is private and secure. We handle your memories with the utmost respect.
       </p>
     </div>

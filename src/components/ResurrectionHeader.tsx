@@ -9,50 +9,50 @@ const ResurrectionHeader: React.FC = () => {
   const { stage } = useResurrection();
 
   return (
-    <header className="w-full py-4 sm:py-6 px-4 relative z-10">
+    <header className="w-full py-6 px-4 relative z-10">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center mb-2 sm:mb-4">
+        <div className="flex justify-between items-center mb-4">
           <div className="text-center">
             <h1 
-              className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-wide text-resurrection-foreground mb-1 sm:mb-2 animate-fade-in flex items-center justify-center"
+              className="text-4xl md:text-5xl font-serif font-light tracking-wide text-resurrection-foreground mb-2 animate-fade-in flex items-center justify-center"
             >
-              <span className="text-gradient-animate mr-1 sm:mr-2">🔮</span> 
-              <span className="whitespace-nowrap">Resurrection</span>
-              <Cross className="mx-1 sm:mx-2 text-resurrection-accent h-6 w-6 sm:h-8 sm:w-8 animate-pulse-slow" />
-              <span className="text-resurrection-primary font-normal whitespace-nowrap">GPT</span>
+              <span className="text-gradient-animate mr-2">🔮</span> 
+              Resurrection
+              <Cross className="mx-2 text-resurrection-accent h-8 w-8 animate-pulse-slow" />
+              <span className="text-resurrection-primary font-normal">GPT</span>
             </h1>
             
             <a 
               href="https://www.aiwebtools.ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] sm:text-xs text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 mb-2 inline-block"
+              className="text-xs text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 animate-fade-in mb-3 inline-block"
             >
               Presented by AiWebTools.Ai
             </a>
           </div>
           
-          <div className="flex items-center gap-1 sm:gap-2">
+          <div className="flex items-center gap-2">
             <Button
               variant="ghost"
               size="icon"
               asChild
-              className="text-resurrection-foreground hover:text-resurrection-primary hover:bg-resurrection-background/20 h-8 w-8 sm:h-10 sm:w-10"
+              className="text-resurrection-foreground hover:text-resurrection-primary hover:bg-resurrection-background/20"
             >
               <a href="#disclaimer">
-                <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-500" />
+                <AlertTriangle className="h-5 w-5 text-yellow-500" />
                 <span className="sr-only">Legal Disclaimer</span>
               </a>
             </Button>
             
             <Button
-              variant="outline"
+              variant="ghost"
               size="icon"
               asChild
-              className="border-2 border-resurrection-primary bg-resurrection-background/50 text-resurrection-primary hover:bg-resurrection-primary hover:text-white h-8 w-8 sm:h-10 sm:w-10 rounded-full shadow-lg transition-colors duration-300"
+              className="text-resurrection-foreground hover:text-resurrection-primary hover:bg-resurrection-background/20"
             >
               <Link to="/">
-                <Home className="h-4 w-4 sm:h-5 sm:w-5" />
+                <Home className="h-5 w-5" />
                 <span className="sr-only">Home</span>
               </Link>
             </Button>
@@ -60,7 +60,7 @@ const ResurrectionHeader: React.FC = () => {
         </div>
         
         {stage === "welcome" && (
-          <p className="text-resurrection-foreground/80 animate-fade-in max-w-lg mx-auto text-xs sm:text-sm md:text-base px-1 sm:px-0">
+          <p className="text-resurrection-foreground/80 animate-fade-in max-w-lg mx-auto text-sm md:text-base">
             Reconnect with the memories and spirit of your departed loved ones through meaningful conversation.
           </p>
         )}

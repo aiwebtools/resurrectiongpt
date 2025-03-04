@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -45,40 +46,10 @@
 
   body {
     @apply bg-resurrection-background text-resurrection-foreground font-sans antialiased;
-    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
-  }
-}
-
-/* Media queries for mobile optimization */
-@layer utilities {
-  @media (max-width: 640px) {
-    .glass-card {
-      @apply p-4 rounded-lg;
-    }
-    
-    .interactive-card {
-      @apply transition-none hover:scale-100;
-    }
-    
-    .footer-links {
-      @apply grid grid-cols-2 gap-2;
-    }
-    
-    .contact-container {
-      @apply flex-col gap-2;
-    }
-  }
-  
-  .footer-links {
-    @apply flex flex-wrap justify-center gap-4;
-  }
-  
-  .contact-container {
-    @apply flex justify-center items-center gap-4;
   }
 }
 
@@ -184,32 +155,4 @@
 /* Dark theme specific styles */
 .dark-glow {
   @apply shadow-[0_0_15px_rgba(139,92,246,0.5)];
-}
-
-/* Mobile optimization */
-@media (max-width: 640px) {
-  .particles-container {
-    opacity: 0.3;
-  }
-  
-  .dark-glow {
-    @apply shadow-[0_0_8px_rgba(139,92,246,0.4)];
-  }
-  
-  footer {
-    @apply text-center;
-  }
-  
-  .contact-link {
-    @apply justify-center;
-  }
-}
-
-/* Footer specific styles */
-.footer-divider {
-  @apply w-full h-px bg-white/10 my-4;
-}
-
-.contact-link {
-  @apply flex items-center gap-1 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300;
 }
