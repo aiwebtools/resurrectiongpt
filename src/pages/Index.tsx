@@ -9,6 +9,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import LetterFromHeaven from "@/components/LetterFromHeaven";
 import Particles from "@/components/Particles";
 import FAQ from "@/components/FAQ";
+import LegalDisclaimer from "@/components/LegalDisclaimer"; 
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, Cross, ExternalLink } from "lucide-react";
 
@@ -111,14 +112,20 @@ const Footer: React.FC = () => {
 const MainContent: React.FC = () => {
   const { stage } = useResurrection();
   const [showFAQ, setShowFAQ] = useState(false);
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
 
   // Check if URL hash is #faq and show FAQ
   useEffect(() => {
     const handleHashChange = () => {
       if (window.location.hash === '#faq') {
         setShowFAQ(true);
+        setShowDisclaimer(false);
+      } else if (window.location.hash === '#disclaimer') {
+        setShowFAQ(false);
+        setShowDisclaimer(true);
       } else {
         setShowFAQ(false);
+        setShowDisclaimer(false);
       }
     };
 
@@ -144,6 +151,11 @@ const MainContent: React.FC = () => {
             window.history.pushState(null, '', window.location.pathname);
             setShowFAQ(false);
           }} />
+        ) : showDisclaimer ? (
+          <LegalDisclaimer onClose={() => {
+            window.history.pushState(null, '', window.location.pathname);
+            setShowDisclaimer(false);
+          }} />
         ) : (
           <AnimatePresence mode="wait">
             <motion.div
@@ -164,7 +176,7 @@ const MainContent: React.FC = () => {
         )}
       </main>
       
-      {(stage === "welcome" || showFAQ) && <Footer />}
+      {(stage === "welcome" || showFAQ || showDisclaimer) && <Footer />}
     </div>
   );
 };
