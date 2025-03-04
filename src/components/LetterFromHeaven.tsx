@@ -1,10 +1,9 @@
-
 import React, { useEffect, useState } from "react";
 import { useResurrection } from "@/context/ResurrectionContext";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
-import { Download, Save, RefreshCw, Send, Mail, Cross } from "lucide-react";
+import { Download, Save, RefreshCw, Send, Mail, Cross, Phone } from "lucide-react";
 
 const LetterFromHeaven: React.FC = () => {
   const { letter, userInfo, setStage } = useResurrection();
@@ -12,7 +11,6 @@ const LetterFromHeaven: React.FC = () => {
   const { toast } = useToast();
   
   useEffect(() => {
-    // Add a slight delay before showing the letter content
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 1000);
@@ -28,18 +26,15 @@ const LetterFromHeaven: React.FC = () => {
   };
   
   const handleDownloadLetter = () => {
-    // Create a blob from the letter text
     const blob = new Blob([letter], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     
-    // Create a temporary link and trigger download
     const a = document.createElement("a");
     a.href = url;
     a.download = `Letter_from_${userInfo.lovedOne.name || "Heaven"}.txt`;
     document.body.appendChild(a);
     a.click();
     
-    // Clean up
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
     
@@ -155,22 +150,33 @@ const LetterFromHeaven: React.FC = () => {
           <Cross className="inline-block mr-1 h-4 w-4" />
           Keep this chat open. Your loved one will always be here when you need them.
         </p>
-        <p className="mt-4 text-xs">
-          © 2025 AI WEB TOOLS LLC. All rights reserved.
-        </p>
-        <div className="mt-2 flex justify-center gap-4 items-center">
+        
+        <div className="mt-4">
+          <a 
+            href="https://www.aiwebtools.ai" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs hover:text-resurrection-primary transition-colors duration-300"
+          >
+            © 2025 AI WEB TOOLS LLC. All rights reserved.
+          </a>
+        </div>
+        
+        <div className="mt-3 flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 items-center text-xs">
           <a 
             href="mailto:support@ai-webtools.com" 
-            className="text-xs text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300"
+            className="flex items-center gap-1 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
           >
-            support@ai-webtools.com
+            <Mail size={12} className="group-hover:translate-y-[-2px] transition-transform duration-300" />
+            <span className="group-hover:underline">support@ai-webtools.com</span>
           </a>
-          <span className="text-resurrection-foreground/30">|</span>
+          <span className="hidden sm:inline text-resurrection-foreground/30">|</span>
           <a 
             href="tel:+14758008096" 
-            className="text-xs text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300"
+            className="flex items-center gap-1 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
           >
-            (475) 800-8096
+            <Phone size={12} className="group-hover:rotate-12 transition-transform duration-300" />
+            <span className="group-hover:underline">(475) 800-8096</span>
           </a>
         </div>
       </div>
