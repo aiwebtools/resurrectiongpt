@@ -144,7 +144,7 @@
 
 /* Text effects */
 .text-gradient-animate {
-  @apply bg-text-gradient bg-clip-text text-transparent bg-300% animate-text-shimmer;
+  @apply bg-text-gradient bg-clip-text text-transparent bg-[length:300%_100%] animate-text-shimmer;
 }
 
 /* Interactive elements */
