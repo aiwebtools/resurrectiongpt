@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useResurrection } from "@/context/ResurrectionContext";
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,7 @@ const Welcome: React.FC = () => {
   const { setStage } = useResurrection();
 
   const handleBegin = () => {
-    setStage("userInfo");
+    window.open("https://chatgpt.com/g/g-dfGHDaPWK-resurrection-gpt", "_blank");
   };
 
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -127,7 +126,6 @@ const Welcome: React.FC = () => {
           </li>
         </ul>
         
-        {/* YouTube Video Section */}
         <div className="mt-8 mb-8">
           <div className="flex items-center justify-center gap-2 mb-3">
             <Youtube className="text-resurrection-accent" size={20} />
