@@ -11,7 +11,7 @@ import Particles from "@/components/Particles";
 import FAQ from "@/components/FAQ";
 import LegalDisclaimer from "@/components/LegalDisclaimer"; 
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, Cross, ExternalLink } from "lucide-react";
+import { Mail, Phone, Cross, ExternalLink, FileText } from "lucide-react";
 
 const Footer: React.FC = () => {
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -49,38 +49,46 @@ const Footer: React.FC = () => {
           
           <div className="flex justify-center gap-4">
             <a 
+              href="#disclaimer" 
+              className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
+            >
+              <FileText size={12} className="mr-1 group-hover:animate-pulse-slow" />
+              <span className="group-hover:underline">Full Disclaimer</span>
+            </a>
+            <span>|</span>
+            <a 
               href="https://openai.com/policies/privacy-policy/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-resurrection-primary transition-colors duration-300"
+              className="hover:text-resurrection-primary transition-colors duration-300 group"
             >
-              Privacy Policy
+              <span className="group-hover:underline">Privacy Policy</span>
             </a>
             <span>|</span>
             <a 
               href="https://aiwebtools.ai/terms-of-services" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-resurrection-primary transition-colors duration-300"
+              className="hover:text-resurrection-primary transition-colors duration-300 group"
             >
-              Terms of Service
+              <span className="group-hover:underline">Terms of Service</span>
             </a>
             <span>|</span>
             <a 
               href="#faq" 
-              className="hover:text-resurrection-primary transition-colors duration-300"
+              className="hover:text-resurrection-primary transition-colors duration-300 group"
             >
-              FAQ
+              <span className="group-hover:underline">FAQ</span>
             </a>
             <span>|</span>
             <a 
               href="https://www.AiWebTools.Ai" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-resurrection-primary transition-colors duration-300 flex items-center"
+              className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
             >
-              <ExternalLink size={12} className="mr-1" />
-              More AI Tools
+              <ExternalLink size={12} className="mr-1 group-hover:rotate-45 transition-transform duration-300" />
+              <span className="group-hover:underline">More AI Tools</span>
             </a>
           </div>
         </div>
@@ -89,19 +97,19 @@ const Footer: React.FC = () => {
           <a 
             href="mailto:support@ai-webtools.com" 
             onClick={handleEmailClick}
-            className="hover:text-resurrection-primary transition-colors duration-300 flex items-center"
+            className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
           >
-            <Mail size={12} className="mr-1" />
-            support@ai-webtools.com
+            <Mail size={12} className="mr-1 group-hover:translate-y-[-2px] transition-transform duration-300" />
+            <span className="group-hover:underline">support@ai-webtools.com</span>
           </a> 
           <span>|</span>
           <a 
             href="tel:+14758008096" 
             onClick={handlePhoneClick}
-            className="hover:text-resurrection-primary transition-colors duration-300 flex items-center"
+            className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
           >
-            <Phone size={12} className="mr-1" />
-            (475) 800-8096
+            <Phone size={12} className="mr-1 group-hover:rotate-12 transition-transform duration-300" />
+            <span className="group-hover:underline">(475) 800-8096</span>
           </a>
         </p>
       </div>
