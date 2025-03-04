@@ -38,47 +38,47 @@ const Footer: React.FC = () => {
             </a>
           </div>
           
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-[10px] md:text-xs">
             <a 
               href="#disclaimer" 
               className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
             >
-              <FileText size={12} className="mr-1 group-hover:animate-pulse-slow" />
-              <span className="group-hover:underline">Full Disclaimer</span>
+              <FileText size={10} className="mr-1 group-hover:animate-pulse-slow" />
+              <span className="group-hover:underline">Disclaimer</span>
             </a>
-            <span>|</span>
+            <span className="hidden md:inline">|</span>
             <a 
               href="https://openai.com/policies/privacy-policy/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hover:text-resurrection-primary transition-colors duration-300 group"
             >
-              <span className="group-hover:underline">Privacy Policy</span>
+              <span className="group-hover:underline">Privacy</span>
             </a>
-            <span>|</span>
+            <span className="hidden md:inline">|</span>
             <a 
               href="https://aiwebtools.ai/terms-of-services" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hover:text-resurrection-primary transition-colors duration-300 group"
             >
-              <span className="group-hover:underline">Terms of Service</span>
+              <span className="group-hover:underline">Terms</span>
             </a>
-            <span>|</span>
+            <span className="hidden md:inline">|</span>
             <a 
               href="#faq" 
               className="hover:text-resurrection-primary transition-colors duration-300 group"
             >
               <span className="group-hover:underline">FAQ</span>
             </a>
-            <span>|</span>
+            <span className="hidden md:inline">|</span>
             <a 
               href="https://www.AiWebTools.Ai" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
             >
-              <ExternalLink size={12} className="mr-1 group-hover:rotate-45 transition-transform duration-300" />
+              <ExternalLink size={10} className="mr-1 group-hover:rotate-45 transition-transform duration-300" />
               <span className="group-hover:underline">More AI Tools</span>
             </a>
           </div>
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
             href="https://www.aiwebtools.ai" 
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-resurrection-primary transition-colors duration-300"
+            className="hover:text-resurrection-primary transition-colors duration-300 text-[10px] md:text-xs"
           >
             © 2025 AI WEB TOOLS LLC. All rights reserved.
           </a>
@@ -104,22 +104,22 @@ const Footer: React.FC = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground"
+                className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground text-[10px] md:text-xs py-1 h-auto"
               >
-                <Server className="mr-2 h-4 w-4" />
+                <Server className="mr-2 h-3 w-3 md:h-4 md:w-4" />
                 AI TOOL MAINFRAME
               </Button>
             </a>
           </div>
         </div>
         
-        <p className="mt-3 flex items-center justify-center gap-4">
+        <p className="mt-3 flex items-center justify-center gap-4 text-[10px] md:text-xs flex-wrap">
           <a 
             href="mailto:support@ai-webtools.com" 
             onClick={handleEmailClick}
             className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
           >
-            <Mail size={12} className="mr-1 group-hover:translate-y-[-2px] transition-transform duration-300" />
+            <Mail size={10} className="mr-1 group-hover:translate-y-[-2px] transition-transform duration-300" />
             <span className="group-hover:underline">support@ai-webtools.com</span>
           </a> 
           <span>|</span>
@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
             onClick={handlePhoneClick}
             className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
           >
-            <Phone size={12} className="mr-1 group-hover:rotate-12 transition-transform duration-300" />
+            <Phone size={10} className="mr-1 group-hover:rotate-12 transition-transform duration-300" />
             <span className="group-hover:underline">(475) 800-8096</span>
           </a>
         </p>

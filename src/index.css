@@ -46,10 +46,24 @@
 
   body {
     @apply bg-resurrection-background text-resurrection-foreground font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
+  }
+}
+
+/* Media queries for mobile optimization */
+@layer utilities {
+  @media (max-width: 640px) {
+    .glass-card {
+      @apply p-4 rounded-lg;
+    }
+    
+    .interactive-card {
+      @apply transition-none hover:scale-100;
+    }
   }
 }
 
@@ -155,4 +169,15 @@
 /* Dark theme specific styles */
 .dark-glow {
   @apply shadow-[0_0_15px_rgba(139,92,246,0.5)];
+}
+
+/* Mobile optimization */
+@media (max-width: 640px) {
+  .particles-container {
+    opacity: 0.3;
+  }
+  
+  .dark-glow {
+    @apply shadow-[0_0_8px_rgba(139,92,246,0.4)];
+  }
 }

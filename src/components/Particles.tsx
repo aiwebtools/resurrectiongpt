@@ -15,6 +15,7 @@ const Particles: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const animationRef = useRef<number | null>(null);
+  const isMobileRef = useRef<boolean>(window.innerWidth < 768);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -27,18 +28,23 @@ const Particles: React.FC = () => {
       if (canvas) {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        isMobileRef.current = window.innerWidth < 768;
+        createParticles();
       }
     };
 
     const createParticles = () => {
       particlesRef.current = [];
-      for (let i = 0; i < 50; i++) {
+      // Reduce particle count on mobile for better performance
+      const particleCount = isMobileRef.current ? 25 : 50;
+      
+      for (let i = 0; i < particleCount; i++) {
         const particle: Particle = {
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 2 + 0.5,
-          speedX: (Math.random() - 0.5) * 0.3,
-          speedY: (Math.random() - 0.5) * 0.3,
+          size: Math.random() * (isMobileRef.current ? 1.5 : 2) + 0.5,
+          speedX: (Math.random() - 0.5) * (isMobileRef.current ? 0.2 : 0.3),
+          speedY: (Math.random() - 0.5) * (isMobileRef.current ? 0.2 : 0.3),
           opacity: Math.random() * 0.5 + 0.1,
           color: getRandomColor(),
         };
@@ -76,7 +82,10 @@ const Particles: React.FC = () => {
         else if (particle.y < 0) particle.y = canvas.height;
       });
 
-      connectParticles(ctx);
+      // Skip connection drawing on mobile for better performance
+      if (!isMobileRef.current) {
+        connectParticles(ctx);
+      }
       
       animationRef.current = requestAnimationFrame(animate);
     };
@@ -120,7 +129,7 @@ const Particles: React.FC = () => {
     <canvas 
       ref={canvasRef} 
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: window.innerWidth < 768 ? 0.4 : 0.6 }}
     />
   );
 };
