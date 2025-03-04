@@ -136,7 +136,7 @@ const Welcome: React.FC = () => {
           <div className="relative overflow-hidden pb-[56.25%] h-0 rounded-lg shadow-lg border border-resurrection-primary/30 dark-glow">
             <iframe 
               className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/nEuxdGO-RZ4?start=4" 
+              src="https://www.youtube.com/embed/nEuxdGO-RZ4?start=4&autoplay=1&mute=0&hd=1&vq=hd1080" 
               title="Resurrection GPT Demo" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowFullScreen

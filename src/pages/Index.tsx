@@ -10,7 +10,7 @@ import LetterFromHeaven from "@/components/LetterFromHeaven";
 import Particles from "@/components/Particles";
 import FAQ from "@/components/FAQ";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, Cross } from "lucide-react";
+import { Mail, Phone, Cross, ExternalLink } from "lucide-react";
 
 const Footer: React.FC = () => {
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -50,6 +50,16 @@ const Footer: React.FC = () => {
             className="hover:text-resurrection-primary transition-colors duration-300"
           >
             FAQ
+          </a>
+          <span>|</span>
+          <a 
+            href="https://www.AiWebTools.Ai" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-resurrection-primary transition-colors duration-300 flex items-center"
+          >
+            <ExternalLink size={12} className="mr-1" />
+            More AI Tools
           </a>
         </div>
         <p>© 2025 AI WEB TOOLS LLC. All rights reserved.</p>
