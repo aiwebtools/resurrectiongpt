@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ResurrectionProvider, useResurrection } from "@/context/ResurrectionContext";
 import ResurrectionHeader from "@/components/ResurrectionHeader";
 import Welcome from "@/components/Welcome";
@@ -8,6 +8,7 @@ import QuestionFlow from "@/components/QuestionFlow";
 import LoadingScreen from "@/components/LoadingScreen";
 import LetterFromHeaven from "@/components/LetterFromHeaven";
 import Particles from "@/components/Particles";
+import FAQ from "@/components/FAQ";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, Cross } from "lucide-react";
 
@@ -26,11 +27,30 @@ const Footer: React.FC = () => {
     <footer className="w-full py-4 px-4 text-center text-resurrection-foreground/50 text-xs relative z-10">
       <div className="container mx-auto">
         <div className="flex justify-center gap-4 mb-2">
-          <a href="#" className="hover:text-resurrection-primary transition-colors duration-300">Privacy Policy</a>
+          <a 
+            href="https://openai.com/policies/privacy-policy/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-resurrection-primary transition-colors duration-300"
+          >
+            Privacy Policy
+          </a>
           <span>|</span>
-          <a href="#" className="hover:text-resurrection-primary transition-colors duration-300">Terms of Service</a>
+          <a 
+            href="https://aiwebtools.ai/terms-of-services" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-resurrection-primary transition-colors duration-300"
+          >
+            Terms of Service
+          </a>
           <span>|</span>
-          <a href="#" className="hover:text-resurrection-primary transition-colors duration-300">FAQ</a>
+          <a 
+            href="#faq" 
+            className="hover:text-resurrection-primary transition-colors duration-300"
+          >
+            FAQ
+          </a>
         </div>
         <p>© 2025 AI WEB TOOLS LLC. All rights reserved.</p>
         <p className="mt-1 flex items-center justify-center gap-4">
@@ -59,31 +79,61 @@ const Footer: React.FC = () => {
 
 const MainContent: React.FC = () => {
   const { stage } = useResurrection();
+  const [showFAQ, setShowFAQ] = useState(false);
 
+  // Check if URL hash is #faq and show FAQ
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === '#faq') {
+        setShowFAQ(true);
+      } else {
+        setShowFAQ(false);
+      }
+    };
+
+    // Check on initial load
+    handleHashChange();
+
+    // Add listener for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+  
   return (
     <div className="min-h-screen flex flex-col">
       <ResurrectionHeader />
       
       <main className="flex-1 container mx-auto px-4 py-6 md:py-10 relative z-10">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={stage}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="w-full h-full flex items-center justify-center py-4 md:py-8"
-          >
-            {stage === "welcome" && <Welcome />}
-            {stage === "userInfo" && <UserForm />}
-            {stage === "questionFlow" && <QuestionFlow />}
-            {stage === "loading" && <LoadingScreen />}
-            {stage === "letter" && <LetterFromHeaven />}
-          </motion.div>
-        </AnimatePresence>
+        {showFAQ ? (
+          <FAQ onClose={() => {
+            window.history.pushState(null, '', window.location.pathname);
+            setShowFAQ(false);
+          }} />
+        ) : (
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={stage}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="w-full h-full flex items-center justify-center py-4 md:py-8"
+            >
+              {stage === "welcome" && <Welcome />}
+              {stage === "userInfo" && <UserForm />}
+              {stage === "questionFlow" && <QuestionFlow />}
+              {stage === "loading" && <LoadingScreen />}
+              {stage === "letter" && <LetterFromHeaven />}
+            </motion.div>
+          </AnimatePresence>
+        )}
       </main>
       
-      {stage === "welcome" && <Footer />}
+      {(stage === "welcome" || showFAQ) && <Footer />}
     </div>
   );
 };

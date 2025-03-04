@@ -3,7 +3,7 @@ import React from "react";
 import { useResurrection } from "@/context/ResurrectionContext";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Phone, Mail, ArrowRight, Cross } from "lucide-react";
+import { Phone, Mail, ArrowRight, Cross, HelpCircle, ExternalLink } from "lucide-react";
 
 const Welcome: React.FC = () => {
   const { setStage } = useResurrection();
@@ -90,6 +90,15 @@ const Welcome: React.FC = () => {
             Begin Your Spiritual Connection
             <ArrowRight className="ml-2" />
           </Button>
+          
+          <Button
+            variant="outline"
+            onClick={() => window.location.hash = '#faq'}
+            className="border-resurrection-primary/30 text-resurrection-foreground hover:bg-resurrection-primary/20 py-6 px-8 rounded-md text-lg"
+          >
+            <HelpCircle className="mr-2" />
+            Have Questions? See FAQ
+          </Button>
         </div>
       </motion.div>
       
@@ -139,6 +148,35 @@ const Welcome: React.FC = () => {
             >
               <Phone size={16} />
               <span>(475) 800-8096</span>
+            </a>
+          </div>
+          <div className="mt-4 flex justify-center gap-4">
+            <a 
+              href="https://openai.com/policies/privacy-policy/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300"
+            >
+              <ExternalLink size={14} />
+              <span>Privacy Policy</span>
+            </a>
+            <span className="text-resurrection-foreground/30">|</span>
+            <a 
+              href="https://aiwebtools.ai/terms-of-services" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300"
+            >
+              <ExternalLink size={14} />
+              <span>Terms of Service</span>
+            </a>
+            <span className="text-resurrection-foreground/30">|</span>
+            <a 
+              href="#faq"
+              className="flex items-center gap-1 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300"
+            >
+              <HelpCircle size={14} />
+              <span>FAQ</span>
             </a>
           </div>
           <p className="mt-4">
