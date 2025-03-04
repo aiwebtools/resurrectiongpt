@@ -3,7 +3,7 @@ import React from "react";
 import { useResurrection } from "@/context/ResurrectionContext";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Phone, Mail, ArrowRight, Cross, HelpCircle, ExternalLink } from "lucide-react";
+import { Phone, Mail, ArrowRight, Cross, HelpCircle, ExternalLink, Youtube } from "lucide-react";
 
 const Welcome: React.FC = () => {
   const { setStage } = useResurrection();
@@ -126,6 +126,25 @@ const Welcome: React.FC = () => {
             <span>No Generic Answers, Ever</span>
           </li>
         </ul>
+        
+        {/* YouTube Video Section */}
+        <div className="mt-8 mb-8">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <Youtube className="text-resurrection-accent" size={20} />
+            <h4 className="font-medium text-resurrection-foreground/80">
+              See Resurrection GPT in Action
+            </h4>
+          </div>
+          <div className="relative overflow-hidden pb-[56.25%] h-0 rounded-lg shadow-lg border border-resurrection-primary/30 dark-glow">
+            <iframe 
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/nEuxdGO-RZ4?start=4" 
+              title="Resurrection GPT Demo" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
         
         <div className="mt-6 pt-6 border-t border-white/10 text-center">
           <p className="mb-2 text-resurrection-foreground/70">
