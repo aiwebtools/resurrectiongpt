@@ -80,6 +80,9 @@ export default {
 			backgroundSize: {
 				'300%': '300%',
 			},
+			scale: {
+				'102': '1.02',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {

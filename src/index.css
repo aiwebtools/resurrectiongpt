@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -53,16 +54,47 @@
   }
 }
 
-.glass-card {
-  @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-lg;
-}
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-lg;
+  }
 
-.letter-paper {
-  @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-md;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 1.5rem 1.5rem;
+  .letter-paper {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-md;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 1.5rem 1.5rem;
+  }
+
+  .btn-glow {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .btn-glow::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 bg-white/20 transition-opacity duration-300;
+  }
+
+  .btn-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-glow:active::before {
+    @apply bg-white/30;
+  }
+
+  .text-gradient-animate {
+    @apply bg-text-gradient bg-clip-text text-transparent bg-[length:300%_100%] animate-text-shimmer;
+  }
+
+  .interactive-card {
+    @apply transition-transform duration-300 hover:scale-105 hover:shadow-xl;
+  }
+
+  .dark-glow {
+    @apply shadow-[0_0_15px_rgba(139,92,246,0.5)];
+  }
 }
 
 .particles-container {
@@ -124,62 +156,22 @@
   transition: opacity 400ms, transform 400ms;
 }
 
-/* Button effects */
-.btn-glow {
-  @apply relative overflow-hidden transition-all duration-300;
-}
-
-.btn-glow::before {
-  content: '';
-  @apply absolute inset-0 opacity-0 bg-white/20 transition-opacity duration-300;
-}
-
-.btn-glow:hover::before {
-  @apply opacity-100;
-}
-
-.btn-glow:active::before {
-  @apply bg-white/30;
-}
-
-/* Text effects */
-.text-gradient-animate {
-  @apply bg-text-gradient bg-clip-text text-transparent bg-[length:300%_100%] animate-text-shimmer;
-}
-
-/* Interactive elements */
-.interactive-card {
-  @apply transition-transform duration-300 hover:scale-105 hover:shadow-xl;
-}
-
-/* Dark theme specific styles */
-.dark-glow {
-  @apply shadow-[0_0_15px_rgba(139,92,246,0.5)];
-}
-
 /* Mobile optimizations */
-@media (max-width: 640px) {
-  .glass-card {
-    @apply p-4 md:p-8;
-  }
-  
-  .letter-paper {
-    @apply p-4 md:p-6;
-  }
-  
-  .interactive-card {
-    @apply transition-transform duration-300 hover:scale-102 hover:shadow-lg;
-  }
-}
-
-/* Fix iOS 100vh issue */
-@supports (-webkit-touch-callout: none) {
-  .min-h-screen {
-    min-height: -webkit-fill-available;
-  }
-}
-
 @layer utilities {
+  @media (max-width: 640px) {
+    .mobile-glass-card {
+      @apply p-4;
+    }
+    
+    .mobile-letter-paper {
+      @apply p-4;
+    }
+    
+    .mobile-interactive-card {
+      @apply transition-transform duration-300 hover:scale-102 hover:shadow-lg;
+    }
+  }
+
   .xs\:hidden {
     @media (min-width: 480px) {
       display: none;
@@ -194,5 +186,12 @@
     @media (min-width: 480px) {
       display: inline;
     }
+  }
+}
+
+/* Fix iOS 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
   }
 }
