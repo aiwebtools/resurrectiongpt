@@ -38,6 +38,13 @@ const LoadingScreen: React.FC = () => {
             Prepare thyself and harden thy emotions.
           </p>
           
+          <div className="mt-6 max-w-md">
+            <p className="text-sm text-resurrection-foreground/60 italic">
+              Creating a personalized connection based on your memories. 
+              You will soon receive a letter from your loved one.
+            </p>
+          </div>
+          
           <div className="mt-8 w-full max-w-md h-1.5 bg-gray-200 rounded-full overflow-hidden">
             <div className="h-full bg-resurrection-primary animate-pulse-slow rounded-full" style={{ width: "100%" }}></div>
           </div>

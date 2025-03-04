@@ -66,6 +66,22 @@ const QuestionFlow: React.FC = () => {
     }, 300);
   };
 
+  // Function to determine the category display text
+  const getCategoryDescription = (category: string) => {
+    switch(category) {
+      case "personal":
+        return "About Their Personality";
+      case "relationship":
+        return "About Your Relationship";
+      case "memories":
+        return "About Your Memories";
+      case "details":
+        return "About Their Life";
+      default:
+        return "";
+    }
+  };
+
   return (
     <div className="w-full max-w-xl mx-auto">
       <div className="glass-card rounded-xl p-6 md:p-8 shadow-xl">
@@ -85,11 +101,20 @@ const QuestionFlow: React.FC = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
+            <div className="mb-3">
+              <span className="text-xs uppercase tracking-wider px-2 py-1 bg-resurrection-primary/10 text-resurrection-primary rounded-full">
+                {getCategoryDescription(currentQuestion.category)}
+              </span>
+            </div>
+            
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-4">
                 <h3 className="text-xl md:text-2xl font-serif text-resurrection-foreground">
                   {currentQuestion.text}
                 </h3>
+                <p className="text-xs text-resurrection-foreground/60 italic">
+                  The more details you share, the more meaningful your spiritual connection will be.
+                </p>
                 <Textarea
                   value={currentAnswer}
                   onChange={(e) => setCurrentAnswer(e.target.value)}
@@ -121,6 +146,10 @@ const QuestionFlow: React.FC = () => {
           </motion.div>
         </AnimatePresence>
       </div>
+      
+      <p className="text-center text-resurrection-foreground/60 mt-3 text-xs px-4">
+        Each answer helps create a more authentic connection with your loved one.
+      </p>
     </div>
   );
 };

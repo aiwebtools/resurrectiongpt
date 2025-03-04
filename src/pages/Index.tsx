@@ -10,6 +10,27 @@ import LetterFromHeaven from "@/components/LetterFromHeaven";
 import Particles from "@/components/Particles";
 import { motion, AnimatePresence } from "framer-motion";
 
+const Footer: React.FC = () => {
+  return (
+    <footer className="w-full py-4 px-4 text-center text-resurrection-foreground/50 text-xs">
+      <div className="container mx-auto">
+        <div className="flex justify-center gap-4 mb-2">
+          <a href="#" className="hover:text-resurrection-primary">Privacy Policy</a>
+          <span>|</span>
+          <a href="#" className="hover:text-resurrection-primary">Terms of Service</a>
+          <span>|</span>
+          <a href="#" className="hover:text-resurrection-primary">FAQ</a>
+        </div>
+        <p>© 2025 AI WEB TOOLS LLC. All rights reserved.</p>
+        <p className="mt-1">
+          <a href="mailto:support@ai-webtools.com" className="hover:text-resurrection-primary">support@ai-webtools.com</a> | 
+          <a href="tel:+14758008096" className="ml-1 hover:text-resurrection-primary">(475) 800-8096</a>
+        </p>
+      </div>
+    </footer>
+  );
+};
+
 const MainContent: React.FC = () => {
   const { stage } = useResurrection();
 
@@ -35,6 +56,8 @@ const MainContent: React.FC = () => {
           </motion.div>
         </AnimatePresence>
       </main>
+      
+      {stage === "welcome" && <Footer />}
     </div>
   );
 };

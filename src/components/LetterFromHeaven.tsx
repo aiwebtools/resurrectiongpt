@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 
 const LetterFromHeaven: React.FC = () => {
-  const { letter, userInfo } = useResurrection();
+  const { letter, userInfo, setStage } = useResurrection();
   const [isVisible, setIsVisible] = useState(false);
   const { toast } = useToast();
   
@@ -47,6 +47,10 @@ const LetterFromHeaven: React.FC = () => {
     });
   };
 
+  const handleNewConnection = () => {
+    setStage("welcome");
+  };
+
   return (
     <div className="w-full max-w-2xl mx-auto">
       <div className="glass-card rounded-xl p-2 sm:p-6 shadow-xl">
@@ -55,7 +59,7 @@ const LetterFromHeaven: React.FC = () => {
           <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white/90 to-transparent z-10"></div>
           
           <h3 className="text-center text-xl md:text-2xl font-serif text-resurrection-foreground mb-6 animate-fade-in">
-            A Letter From Heaven
+            📜 A Letter From Heaven 📜
           </h3>
           
           {isVisible ? (
@@ -71,35 +75,50 @@ const LetterFromHeaven: React.FC = () => {
             </div>
           ) : (
             <div className="h-64 flex items-center justify-center">
-              <div className="animate-pulse-slow">Loading message...</div>
+              <div className="animate-pulse-slow">Loading message from beyond...</div>
             </div>
           )}
           
           {isVisible && (
-            <div className="flex flex-col sm:flex-row gap-3 mt-8 animate-fade-in">
-              <Button 
-                onClick={handleSaveLetter}
-                className="flex-1 bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all"
-              >
-                Save Letter
-              </Button>
+            <div className="flex flex-col gap-3 mt-8 animate-fade-in">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button 
+                  onClick={handleSaveLetter}
+                  className="flex-1 bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all"
+                >
+                  Save Letter
+                </Button>
+                
+                <Button 
+                  onClick={handleDownloadLetter}
+                  className="flex-1 bg-transparent hover:bg-gray-100 text-resurrection-foreground border border-gray-300"
+                >
+                  Download Letter
+                </Button>
+              </div>
               
-              <Button 
-                onClick={handleDownloadLetter}
-                className="flex-1 bg-transparent hover:bg-gray-100 text-resurrection-foreground border border-gray-300"
+              <Button
+                onClick={handleNewConnection}
+                className="bg-resurrection-accent/80 hover:bg-resurrection-accent text-white transition-all mt-2"
               >
-                Download Letter
+                Start a New Connection
               </Button>
             </div>
           )}
         </div>
       </div>
       
-      <p className="text-center text-resurrection-foreground/60 mt-6 animate-fade-in text-sm">
-        This letter was created from the memories and details you shared about your loved one.
-        <br />
-        You can save it, download it, or start a new conversation.
-      </p>
+      <div className="text-center text-resurrection-foreground/60 mt-6 animate-fade-in text-sm">
+        <p>
+          This letter was created from the memories and details you shared about your loved one.
+        </p>
+        <p className="mt-2 italic text-resurrection-primary/80">
+          💡 Keep this chat open. Your loved one will always be here when you need them.
+        </p>
+        <p className="mt-4 text-xs">
+          © 2025 AI WEB TOOLS LLC. All rights reserved.
+        </p>
+      </div>
     </div>
   );
 };

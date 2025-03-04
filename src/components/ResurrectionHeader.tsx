@@ -12,12 +12,12 @@ const ResurrectionHeader: React.FC = () => {
           <h1 
             className="text-4xl md:text-5xl font-serif font-light tracking-wide text-resurrection-foreground mb-2 animate-fade-in"
           >
-            Resurrection
+            🔮 Resurrection
             <span className="ml-2 text-resurrection-primary font-normal">GPT</span>
           </h1>
           {stage === "welcome" && (
             <p className="text-resurrection-foreground/80 animate-fade-in max-w-lg mx-auto text-sm md:text-base">
-              Bridge conversations between you and your departed loved ones, finding comfort and closure through meaningful connection.
+              Reconnect with the memories and spirit of your departed loved ones through meaningful conversation.
             </p>
           )}
         </div>

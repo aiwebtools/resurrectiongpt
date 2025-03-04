@@ -30,9 +30,14 @@ const UserForm: React.FC = () => {
   return (
     <div className="w-full max-w-md mx-auto">
       <div className="glass-card rounded-xl p-6 md:p-8 animate-fade-in shadow-xl">
-        <h2 className="text-2xl md:text-3xl font-serif text-center mb-6 text-resurrection-foreground">
+        <h2 className="text-2xl md:text-3xl font-serif text-center mb-3 text-resurrection-foreground">
           Welcome to your journey
         </h2>
+        
+        <p className="mb-6 text-center text-resurrection-foreground/80 text-sm">
+          Before we begin your spiritual connection, we'll need to gather some information. 
+          This helps create an authentic and meaningful experience.
+        </p>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
@@ -49,6 +54,11 @@ const UserForm: React.FC = () => {
               autoComplete="off"
             />
             {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+          </div>
+          
+          <div className="pt-2 text-center text-resurrection-foreground/70 text-sm">
+            <p>Next, you'll answer questions about your departed loved one.</p>
+            <p className="mt-1 italic">We'll gather details about their personality, memories you shared, and what made them special.</p>
           </div>
           
           <Button 
@@ -80,10 +90,14 @@ const UserForm: React.FC = () => {
                 </svg>
                 Continuing
               </span>
-            ) : "Begin Your Connection"}
+            ) : "Continue to Questions"}
           </Button>
         </form>
       </div>
+      
+      <p className="text-center text-resurrection-foreground/60 mt-4 text-xs px-4">
+        Your experience is private and secure. We handle your memories with the utmost respect.
+      </p>
     </div>
   );
 };
