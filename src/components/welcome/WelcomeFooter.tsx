@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Mail, Phone, ExternalLink, HelpCircle } from "lucide-react";
+import { Mail, Phone, ExternalLink, HelpCircle, FileText } from "lucide-react";
 
 const WelcomeFooter: React.FC = () => {
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -64,6 +64,14 @@ const WelcomeFooter: React.FC = () => {
         >
           <HelpCircle size={14} />
           <span>FAQ</span>
+        </a>
+        <span className="text-resurrection-foreground/30">|</span>
+        <a 
+          href="#disclaimer"
+          className="flex items-center gap-1 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300"
+        >
+          <FileText size={14} />
+          <span>Full Disclaimer</span>
         </a>
       </div>
       <p className="mt-4">
