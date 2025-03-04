@@ -4,6 +4,8 @@ import { useResurrection } from "@/context/ResurrectionContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 
 const UserForm: React.FC = () => {
   const { setStage, userInfo, setUserInfo } = useResurrection();
@@ -29,8 +31,13 @@ const UserForm: React.FC = () => {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <div className="glass-card rounded-xl p-6 md:p-8 animate-fade-in shadow-xl">
-        <h2 className="text-2xl md:text-3xl font-serif text-center mb-3 text-resurrection-foreground">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="glass-card rounded-xl p-6 md:p-8 animate-fade-in shadow-xl dark-glow"
+      >
+        <h2 className="text-2xl md:text-3xl font-serif text-center mb-3 text-gradient-animate">
           Welcome to your journey
         </h2>
         
@@ -50,7 +57,7 @@ const UserForm: React.FC = () => {
               value={userInfo.name}
               onChange={(e) => setUserInfo({...userInfo, name: e.target.value})}
               placeholder="Enter your name"
-              className="bg-white/50 border-resurrection-primary/20 focus:border-resurrection-primary/50 transition-all duration-300"
+              className="bg-white/5 border-resurrection-primary/20 focus:border-resurrection-primary/50 transition-all duration-300 text-resurrection-foreground"
               autoComplete="off"
             />
             {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
@@ -63,7 +70,7 @@ const UserForm: React.FC = () => {
           
           <Button 
             type="submit" 
-            className="w-full bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all duration-300 py-6 rounded-md"
+            className="w-full bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all duration-300 py-6 rounded-md btn-glow"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
@@ -90,10 +97,15 @@ const UserForm: React.FC = () => {
                 </svg>
                 Continuing
               </span>
-            ) : "Continue to Questions"}
+            ) : (
+              <span className="flex items-center">
+                <span>Continue to Questions</span>
+                <Sparkles className="ml-2 h-5 w-5" />
+              </span>
+            )}
           </Button>
         </form>
-      </div>
+      </motion.div>
       
       <p className="text-center text-resurrection-foreground/60 mt-4 text-xs px-4">
         Your experience is private and secure. We handle your memories with the utmost respect.

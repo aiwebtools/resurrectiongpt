@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const LoadingScreen: React.FC = () => {
   const [dots, setDots] = useState("");
@@ -17,8 +18,13 @@ const LoadingScreen: React.FC = () => {
 
   return (
     <div className="w-full max-w-xl mx-auto text-center">
-      <div className="relative">
-        <div className="glass-card rounded-xl p-8 shadow-xl flex flex-col items-center">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        className="relative"
+      >
+        <div className="glass-card rounded-xl p-8 shadow-xl flex flex-col items-center dark-glow">
           <div className="w-20 h-20 mb-6 relative">
             <div className="absolute inset-0 bg-resurrection-primary/20 rounded-full animate-pulse-slow"></div>
             <div className="absolute inset-2 bg-resurrection-primary/30 rounded-full animate-pulse-slow animation-delay-100"></div>
@@ -26,11 +32,11 @@ const LoadingScreen: React.FC = () => {
             <div className="absolute inset-6 bg-resurrection-accent/60 rounded-full animate-spin-slow"></div>
           </div>
           
-          <h3 className="text-2xl font-serif mb-4 text-resurrection-foreground animate-pulse-slow">
+          <h3 className="text-2xl font-serif mb-4 text-resurrection-foreground animate-pulse-slow text-gradient-animate">
             🌟✨🔮🌙⚰️✨🔮🌟
           </h3>
           
-          <p className="text-lg sm:text-xl font-serif text-resurrection-foreground/90 mb-2">
+          <p className="text-lg sm:text-xl font-serif text-gradient-animate mb-2">
             Spiritual Resurrection Loading{dots}
           </p>
           
@@ -45,14 +51,19 @@ const LoadingScreen: React.FC = () => {
             </p>
           </div>
           
-          <div className="mt-8 w-full max-w-md h-1.5 bg-gray-200 rounded-full overflow-hidden">
-            <div className="h-full bg-resurrection-primary animate-pulse-slow rounded-full" style={{ width: "100%" }}></div>
+          <div className="mt-8 w-full max-w-md h-1.5 bg-muted/50 rounded-full overflow-hidden">
+            <motion.div 
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 8, ease: "easeInOut" }}
+              className="h-full bg-resurrection-primary rounded-full"
+            ></motion.div>
           </div>
           
           <div className="absolute -top-12 -left-12 w-24 h-24 bg-resurrection-primary/10 rounded-full blur-3xl animate-float"></div>
           <div className="absolute -bottom-16 -right-8 w-32 h-32 bg-resurrection-accent/10 rounded-full blur-3xl animate-float animation-delay-500"></div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

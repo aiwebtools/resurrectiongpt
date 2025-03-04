@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
 import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, SkipForward, Sparkles } from "lucide-react";
 
 const QuestionFlow: React.FC = () => {
   const { 
@@ -84,13 +85,13 @@ const QuestionFlow: React.FC = () => {
 
   return (
     <div className="w-full max-w-xl mx-auto">
-      <div className="glass-card rounded-xl p-6 md:p-8 shadow-xl">
+      <div className="glass-card rounded-xl p-6 md:p-8 shadow-xl dark-glow">
         <div className="mb-6">
           <div className="flex justify-between items-center text-sm text-resurrection-foreground/70 mb-2">
             <span>Question {questionIndex + 1} of {questions.length}</span>
             <span>{Math.round(progressPercentage)}% Complete</span>
           </div>
-          <Progress value={progressPercentage} className="h-2 bg-gray-200/50" />
+          <Progress value={progressPercentage} className="h-2 bg-muted/50" />
         </div>
         
         <AnimatePresence mode="wait">
@@ -102,7 +103,7 @@ const QuestionFlow: React.FC = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="mb-3">
-              <span className="text-xs uppercase tracking-wider px-2 py-1 bg-resurrection-primary/10 text-resurrection-primary rounded-full">
+              <span className="text-xs uppercase tracking-wider px-2 py-1 bg-resurrection-primary/20 text-resurrection-primary rounded-full">
                 {getCategoryDescription(currentQuestion.category)}
               </span>
             </div>
@@ -119,7 +120,7 @@ const QuestionFlow: React.FC = () => {
                   value={currentAnswer}
                   onChange={(e) => setCurrentAnswer(e.target.value)}
                   placeholder="Share your thoughts and memories..."
-                  className="bg-white/50 border-resurrection-primary/20 focus:border-resurrection-primary/50 transition-all min-h-[120px]"
+                  className="bg-white/5 border-resurrection-primary/20 focus:border-resurrection-primary/50 transition-all min-h-[120px] text-resurrection-foreground"
                 />
                 {error && <p className="text-red-500 text-sm">{error}</p>}
               </div>
@@ -127,19 +128,29 @@ const QuestionFlow: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Button 
                   type="submit" 
-                  className="flex-1 bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all"
+                  className="flex-1 bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all btn-glow"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Saving..." : "Continue"}
+                  {isSubmitting ? (
+                    <span>Saving...</span>
+                  ) : (
+                    <span className="flex items-center">
+                      <span>Continue</span>
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </span>
+                  )}
                 </Button>
                 
                 <Button 
                   type="button" 
                   onClick={handleSkip}
-                  className="bg-transparent hover:bg-gray-100 text-resurrection-foreground/70 border border-gray-300"
+                  className="bg-muted hover:bg-muted/80 text-resurrection-foreground/70 border border-white/10"
                   disabled={isSubmitting}
                 >
-                  Skip this question
+                  <span className="flex items-center">
+                    <span>Skip this question</span>
+                    <SkipForward className="ml-2 h-4 w-4" />
+                  </span>
                 </Button>
               </div>
             </form>

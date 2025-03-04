@@ -9,22 +9,48 @@ import LoadingScreen from "@/components/LoadingScreen";
 import LetterFromHeaven from "@/components/LetterFromHeaven";
 import Particles from "@/components/Particles";
 import { motion, AnimatePresence } from "framer-motion";
+import { Mail, Phone, Cross } from "lucide-react";
 
 const Footer: React.FC = () => {
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.location.href = "mailto:support@ai-webtools.com";
+  };
+
+  const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.location.href = "tel:+14758008096";
+  };
+
   return (
-    <footer className="w-full py-4 px-4 text-center text-resurrection-foreground/50 text-xs">
+    <footer className="w-full py-4 px-4 text-center text-resurrection-foreground/50 text-xs relative z-10">
       <div className="container mx-auto">
         <div className="flex justify-center gap-4 mb-2">
-          <a href="#" className="hover:text-resurrection-primary">Privacy Policy</a>
+          <a href="#" className="hover:text-resurrection-primary transition-colors duration-300">Privacy Policy</a>
           <span>|</span>
-          <a href="#" className="hover:text-resurrection-primary">Terms of Service</a>
+          <a href="#" className="hover:text-resurrection-primary transition-colors duration-300">Terms of Service</a>
           <span>|</span>
-          <a href="#" className="hover:text-resurrection-primary">FAQ</a>
+          <a href="#" className="hover:text-resurrection-primary transition-colors duration-300">FAQ</a>
         </div>
         <p>© 2025 AI WEB TOOLS LLC. All rights reserved.</p>
-        <p className="mt-1">
-          <a href="mailto:support@ai-webtools.com" className="hover:text-resurrection-primary">support@ai-webtools.com</a> | 
-          <a href="tel:+14758008096" className="ml-1 hover:text-resurrection-primary">(475) 800-8096</a>
+        <p className="mt-1 flex items-center justify-center gap-4">
+          <a 
+            href="mailto:support@ai-webtools.com" 
+            onClick={handleEmailClick}
+            className="hover:text-resurrection-primary transition-colors duration-300 flex items-center"
+          >
+            <Mail size={12} className="mr-1" />
+            support@ai-webtools.com
+          </a> 
+          <span>|</span>
+          <a 
+            href="tel:+14758008096" 
+            onClick={handlePhoneClick}
+            className="hover:text-resurrection-primary transition-colors duration-300 flex items-center"
+          >
+            <Phone size={12} className="mr-1" />
+            (475) 800-8096
+          </a>
         </p>
       </div>
     </footer>

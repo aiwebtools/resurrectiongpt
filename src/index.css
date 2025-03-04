@@ -7,65 +7,35 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 47.4% 11.2%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 272 91% 65%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 217.2 91.2% 59.8%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 270 95% 75%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 262.1 83.3% 57.8%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-
-    --radius: 0.75rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 330 95% 60%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 272 91% 65%;
+
+    --radius: 0.75rem;
   }
 }
 
@@ -75,7 +45,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-resurrection-background text-resurrection-foreground font-sans antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -84,14 +54,14 @@
 }
 
 .glass-card {
-  @apply bg-white/60 backdrop-blur-md border border-white/20 shadow-lg;
+  @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-lg;
 }
 
 .letter-paper {
-  @apply bg-white/90 backdrop-blur-sm border border-gray-200 shadow-md;
+  @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-md;
   background-image: 
-    linear-gradient(to right, rgba(100, 100, 100, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(100, 100, 100, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 1.5rem 1.5rem;
 }
 
@@ -108,7 +78,7 @@
 
 .particle {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -119,16 +89,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(240, 240, 240, 0.2);
+  background: rgba(40, 40, 40, 0.2);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(129, 140, 248, 0.5);
+  background: rgba(139, 92, 246, 0.5);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(129, 140, 248, 0.8);
+  background: rgba(139, 92, 246, 0.8);
 }
 
 /* Page transitions */
@@ -152,4 +122,37 @@
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity 400ms, transform 400ms;
+}
+
+/* Button effects */
+.btn-glow {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.btn-glow::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 bg-white/20 transition-opacity duration-300;
+}
+
+.btn-glow:hover::before {
+  @apply opacity-100;
+}
+
+.btn-glow:active::before {
+  @apply bg-white/30;
+}
+
+/* Text effects */
+.text-gradient-animate {
+  @apply bg-text-gradient bg-clip-text text-transparent bg-300% animate-text-shimmer;
+}
+
+/* Interactive elements */
+.interactive-card {
+  @apply transition-transform duration-300 hover:scale-105 hover:shadow-xl;
+}
+
+/* Dark theme specific styles */
+.dark-glow {
+  @apply shadow-[0_0_15px_rgba(139,92,246,0.5)];
 }

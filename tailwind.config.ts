@@ -64,12 +64,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				resurrection: {
-					primary: '#3b82f6',
-					secondary: '#1e40af',
-					accent: '#8b5cf6',
-					muted: '#e0e7ff',
-					background: '#f8fafc',
-					foreground: '#0f172a',
+					primary: '#8B5CF6',
+					secondary: '#6D28D9',
+					accent: '#EC4899',
+					muted: '#1E293B',
+					background: '#0F172A',
+					foreground: '#F8FAFC',
 				}
 			},
 			borderRadius: {
@@ -166,6 +166,22 @@ export default {
 						transform: 'translate(var(--random-x), var(--random-y))',
 						opacity: '0'
 					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 5px rgba(139, 92, 246, 0.8), 0 0 10px rgba(139, 92, 246, 0.5)'
+					},
+					'50%': {
+						boxShadow: '0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.5)'
+					}
+				},
+				'text-shimmer': {
+					'0%': {
+						backgroundPosition: '0% 50%'
+					},
+					'100%': {
+						backgroundPosition: '100% 50%'
+					}
 				}
 			},
 			animation: {
@@ -178,7 +194,9 @@ export default {
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'float': 'float 6s ease-in-out infinite',
 				'spin-slow': 'spin-slow 10s linear infinite',
-				'particles': 'particles 5s ease-in-out infinite'
+				'particles': 'particles 5s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite',
+				'text-shimmer': 'text-shimmer 3s linear infinite'
 			},
 			fontFamily: {
 				serif: ['Cormorant Garamond', 'serif'],
@@ -187,6 +205,7 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'text-gradient': 'linear-gradient(90deg, #EC4899, #8B5CF6, #3B82F6)',
 			},
 			transitionDuration: {
 				'2000': '2000ms',

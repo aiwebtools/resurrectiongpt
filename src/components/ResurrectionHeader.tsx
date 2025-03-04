@@ -1,6 +1,7 @@
 
 import React from "react";
 import { useResurrection } from "@/context/ResurrectionContext";
+import { Cross } from "lucide-react";
 
 const ResurrectionHeader: React.FC = () => {
   const { stage } = useResurrection();
@@ -10,10 +11,12 @@ const ResurrectionHeader: React.FC = () => {
       <div className="container mx-auto flex justify-center items-center">
         <div className="text-center">
           <h1 
-            className="text-4xl md:text-5xl font-serif font-light tracking-wide text-resurrection-foreground mb-2 animate-fade-in"
+            className="text-4xl md:text-5xl font-serif font-light tracking-wide text-resurrection-foreground mb-2 animate-fade-in flex items-center justify-center"
           >
-            🔮 Resurrection
-            <span className="ml-2 text-resurrection-primary font-normal">GPT</span>
+            <span className="text-gradient-animate mr-2">🔮</span> 
+            Resurrection
+            <Cross className="mx-2 text-resurrection-accent h-8 w-8 animate-pulse-slow" />
+            <span className="text-resurrection-primary font-normal">GPT</span>
           </h1>
           {stage === "welcome" && (
             <p className="text-resurrection-foreground/80 animate-fade-in max-w-lg mx-auto text-sm md:text-base">
