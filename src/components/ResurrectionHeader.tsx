@@ -18,6 +18,16 @@ const ResurrectionHeader: React.FC = () => {
             <Cross className="mx-2 text-resurrection-accent h-8 w-8 animate-pulse-slow" />
             <span className="text-resurrection-primary font-normal">GPT</span>
           </h1>
+          
+          <a 
+            href="https://www.aiwebtools.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 animate-fade-in mb-3 inline-block"
+          >
+            Presented by AiWebTools.Ai
+          </a>
+          
           {stage === "welcome" && (
             <p className="text-resurrection-foreground/80 animate-fade-in max-w-lg mx-auto text-sm md:text-base">
               Reconnect with the memories and spirit of your departed loved ones through meaningful conversation.
