@@ -24,43 +24,64 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="w-full py-4 px-4 text-center text-resurrection-foreground/50 text-xs relative z-10">
+    <footer className="w-full py-4 px-4 text-resurrection-foreground/50 text-xs relative z-10">
       <div className="container mx-auto">
-        <div className="flex justify-center gap-4 mb-2">
-          <a 
-            href="https://openai.com/policies/privacy-policy/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="hover:text-resurrection-primary transition-colors duration-300"
-          >
-            Privacy Policy
-          </a>
-          <span>|</span>
-          <a 
-            href="https://aiwebtools.ai/terms-of-services" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="hover:text-resurrection-primary transition-colors duration-300"
-          >
-            Terms of Service
-          </a>
-          <span>|</span>
-          <a 
-            href="#faq" 
-            className="hover:text-resurrection-primary transition-colors duration-300"
-          >
-            FAQ
-          </a>
-          <span>|</span>
-          <a 
-            href="https://www.AiWebTools.Ai" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="hover:text-resurrection-primary transition-colors duration-300 flex items-center"
-          >
-            <ExternalLink size={12} className="mr-1" />
-            More AI Tools
-          </a>
+        <div className="flex flex-col md:flex-row md:justify-between items-center mb-4">
+          <div className="mb-4 md:mb-0">
+            <div className="flex items-center">
+              <h2 className="text-xl font-serif font-light tracking-wide text-resurrection-foreground flex items-center">
+                <span className="text-gradient-animate mr-2">🔮</span> 
+                Resurrection
+                <Cross className="mx-2 text-resurrection-accent h-5 w-5 animate-pulse-slow" />
+                <span className="text-resurrection-primary font-normal">GPT</span>
+              </h2>
+            </div>
+            <a 
+              href="https://www.aiwebtools.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 mt-1 inline-block"
+            >
+              Presented by AiWebTools.Ai
+            </a>
+          </div>
+          
+          <div className="flex justify-center gap-4">
+            <a 
+              href="https://openai.com/policies/privacy-policy/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-resurrection-primary transition-colors duration-300"
+            >
+              Privacy Policy
+            </a>
+            <span>|</span>
+            <a 
+              href="https://aiwebtools.ai/terms-of-services" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-resurrection-primary transition-colors duration-300"
+            >
+              Terms of Service
+            </a>
+            <span>|</span>
+            <a 
+              href="#faq" 
+              className="hover:text-resurrection-primary transition-colors duration-300"
+            >
+              FAQ
+            </a>
+            <span>|</span>
+            <a 
+              href="https://www.AiWebTools.Ai" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-resurrection-primary transition-colors duration-300 flex items-center"
+            >
+              <ExternalLink size={12} className="mr-1" />
+              More AI Tools
+            </a>
+          </div>
         </div>
         <p>© 2025 AI WEB TOOLS LLC. All rights reserved.</p>
         <p className="mt-1 flex items-center justify-center gap-4">
