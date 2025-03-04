@@ -1,7 +1,8 @@
 
 import React from "react";
-import { Mail, Phone, Cross, ExternalLink, FileText, HelpCircle } from "lucide-react";
+import { Mail, Phone, Cross, ExternalLink, FileText, HelpCircle, Server } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Footer: React.FC = () => {
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -82,8 +83,30 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
-        <p>© 2025 AI WEB TOOLS LLC. All rights reserved.</p>
-        <p className="mt-1 flex items-center justify-center gap-4">
+        
+        <div className="flex flex-col md:flex-row md:justify-between items-center">
+          <p>© 2025 AI WEB TOOLS LLC. All rights reserved.</p>
+          
+          <div className="mt-3 md:mt-0">
+            <a 
+              href="https://www.aiwebtools.ai" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground"
+              >
+                <Server className="mr-2 h-4 w-4" />
+                AI TOOL MAINFRAME
+              </Button>
+            </a>
+          </div>
+        </div>
+        
+        <p className="mt-3 flex items-center justify-center gap-4">
           <a 
             href="mailto:support@ai-webtools.com" 
             onClick={handleEmailClick}
