@@ -46,10 +46,10 @@ const ResurrectionHeader: React.FC = () => {
             </Button>
             
             <Button
-              variant="outline"
+              variant="default"
               size="icon"
               asChild
-              className="text-resurrection-foreground hover:text-resurrection-primary border-resurrection-foreground/20 hover:border-resurrection-primary h-8 w-8 sm:h-10 sm:w-10"
+              className="bg-resurrection-primary text-white h-8 w-8 sm:h-10 sm:w-10 rounded-full shadow-lg hover:bg-resurrection-accent transition-colors duration-300"
             >
               <Link to="/">
                 <Home className="h-4 w-4 sm:h-5 sm:w-5" />
