@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useResurrection } from "@/context/ResurrectionContext";
-import { Cross, Home } from "lucide-react";
+import { Cross, Home, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -32,17 +32,31 @@ const ResurrectionHeader: React.FC = () => {
             </a>
           </div>
           
-          <Button
-            variant="ghost"
-            size="icon"
-            asChild
-            className="text-resurrection-foreground hover:text-resurrection-primary hover:bg-resurrection-background/20"
-          >
-            <Link to="/">
-              <Home className="h-5 w-5" />
-              <span className="sr-only">Home</span>
-            </Link>
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              asChild
+              className="text-resurrection-foreground hover:text-resurrection-primary hover:bg-resurrection-background/20"
+            >
+              <a href="#disclaimer">
+                <AlertTriangle className="h-5 w-5 text-yellow-500" />
+                <span className="sr-only">Legal Disclaimer</span>
+              </a>
+            </Button>
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              asChild
+              className="text-resurrection-foreground hover:text-resurrection-primary hover:bg-resurrection-background/20"
+            >
+              <Link to="/">
+                <Home className="h-5 w-5" />
+                <span className="sr-only">Home</span>
+              </Link>
+            </Button>
+          </div>
         </div>
         
         {stage === "welcome" && (
