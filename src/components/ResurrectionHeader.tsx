@@ -22,8 +22,7 @@ const ResurrectionHeader: React.FC = () => {
               )}
             >
               <span className="text-gradient-animate mr-1 md:mr-2">🔮</span> 
-              <span className="hidden xs:inline">Resurrection</span>
-              <span className="xs:hidden">R</span>
+              <span>Resurrection</span>
               <Cross className="mx-1 md:mx-2 text-resurrection-accent h-5 w-5 md:h-8 md:w-8 animate-pulse-slow" />
               <span className="text-resurrection-primary font-normal">GPT</span>
             </h1>
