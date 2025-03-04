@@ -42,7 +42,7 @@ const DemoVideo: React.FC = () => {
               className="absolute top-0 left-0 w-full h-full"
               src="https://www.youtube.com/embed/nEuxdGO-RZ4?autoplay=1&mute=0&vq=hd1080&controls=1&rel=0&showinfo=0&modestbranding=1" 
               title="Resurrection GPT Demo" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
               allowFullScreen
             ></iframe>
           </div>
