@@ -85,7 +85,14 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="flex flex-col md:flex-row md:justify-between items-center">
-          <p>© 2025 AI WEB TOOLS LLC. All rights reserved.</p>
+          <a 
+            href="https://www.aiwebtools.ai" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-resurrection-primary transition-colors duration-300"
+          >
+            © 2025 AI WEB TOOLS LLC. All rights reserved.
+          </a>
           
           <div className="mt-3 md:mt-0">
             <a 
