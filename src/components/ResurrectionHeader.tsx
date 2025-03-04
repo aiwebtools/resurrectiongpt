@@ -1,39 +1,55 @@
 
 import React from "react";
 import { useResurrection } from "@/context/ResurrectionContext";
-import { Cross } from "lucide-react";
+import { Cross, Home } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const ResurrectionHeader: React.FC = () => {
   const { stage } = useResurrection();
 
   return (
     <header className="w-full py-6 px-4 relative z-10">
-      <div className="container mx-auto flex justify-center items-center">
-        <div className="text-center">
-          <h1 
-            className="text-4xl md:text-5xl font-serif font-light tracking-wide text-resurrection-foreground mb-2 animate-fade-in flex items-center justify-center"
-          >
-            <span className="text-gradient-animate mr-2">🔮</span> 
-            Resurrection
-            <Cross className="mx-2 text-resurrection-accent h-8 w-8 animate-pulse-slow" />
-            <span className="text-resurrection-primary font-normal">GPT</span>
-          </h1>
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center mb-4">
+          <div className="text-center">
+            <h1 
+              className="text-4xl md:text-5xl font-serif font-light tracking-wide text-resurrection-foreground mb-2 animate-fade-in flex items-center justify-center"
+            >
+              <span className="text-gradient-animate mr-2">🔮</span> 
+              Resurrection
+              <Cross className="mx-2 text-resurrection-accent h-8 w-8 animate-pulse-slow" />
+              <span className="text-resurrection-primary font-normal">GPT</span>
+            </h1>
+            
+            <a 
+              href="https://www.aiwebtools.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 animate-fade-in mb-3 inline-block"
+            >
+              Presented by AiWebTools.Ai
+            </a>
+          </div>
           
-          <a 
-            href="https://www.aiwebtools.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 animate-fade-in mb-3 inline-block"
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="text-resurrection-foreground hover:text-resurrection-primary hover:bg-resurrection-background/20"
           >
-            Presented by AiWebTools.Ai
-          </a>
-          
-          {stage === "welcome" && (
-            <p className="text-resurrection-foreground/80 animate-fade-in max-w-lg mx-auto text-sm md:text-base">
-              Reconnect with the memories and spirit of your departed loved ones through meaningful conversation.
-            </p>
-          )}
+            <Link to="/">
+              <Home className="h-5 w-5" />
+              <span className="sr-only">Home</span>
+            </Link>
+          </Button>
         </div>
+        
+        {stage === "welcome" && (
+          <p className="text-resurrection-foreground/80 animate-fade-in max-w-lg mx-auto text-sm md:text-base">
+            Reconnect with the memories and spirit of your departed loved ones through meaningful conversation.
+          </p>
+        )}
       </div>
     </header>
   );
