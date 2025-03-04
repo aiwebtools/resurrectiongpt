@@ -26,7 +26,7 @@ const ResurrectionHeader: React.FC = () => {
               href="https://www.aiwebtools.ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] sm:text-xs text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 animate-fade-in mb-2 inline-block"
+              className="text-[10px] sm:text-xs text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 mb-2 inline-block"
             >
               Presented by AiWebTools.Ai
             </a>
@@ -46,10 +46,10 @@ const ResurrectionHeader: React.FC = () => {
             </Button>
             
             <Button
-              variant="ghost"
+              variant="outline"
               size="icon"
               asChild
-              className="text-resurrection-foreground hover:text-resurrection-primary hover:bg-resurrection-background/20 h-8 w-8 sm:h-10 sm:w-10"
+              className="text-resurrection-foreground hover:text-resurrection-primary border-resurrection-foreground/20 hover:border-resurrection-primary h-8 w-8 sm:h-10 sm:w-10"
             >
               <Link to="/">
                 <Home className="h-4 w-4 sm:h-5 sm:w-5" />
