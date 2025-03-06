@@ -79,9 +79,14 @@ const ResurrectionHeader: React.FC = () => {
         </div>
         
         {stage === "welcome" && (
-          <p className="text-resurrection-foreground/80 animate-fade-in max-w-lg mx-auto text-xs sm:text-sm md:text-base px-2">
-            Reconnect with the memories and spirit of your departed loved ones through meaningful conversation.
-          </p>
+          <div className="animate-fade-in max-w-lg mx-auto px-2">
+            <p className="text-resurrection-foreground/80 text-xs sm:text-sm md:text-base">
+              Reconnect with the memories and spirit of your departed loved ones through meaningful conversation.
+            </p>
+            <p className="text-resurrection-foreground/60 text-[10px] sm:text-xs italic mt-1">
+              This AI tool is not a replacement for professional grief counseling or therapy.
+            </p>
+          </div>
         )}
       </div>
     </header>
