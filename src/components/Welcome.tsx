@@ -10,6 +10,8 @@ import CTAButtons from "./welcome/CTAButtons";
 import FeatureList from "./welcome/FeatureList";
 import DemoVideo from "./welcome/DemoVideo";
 import WelcomeFooter from "./welcome/WelcomeFooter";
+import Testimonials from "./Testimonials";
+import FAQSection from "./FAQSection";
 
 const Welcome: React.FC = () => {
   const { setStage } = useResurrection();
@@ -33,6 +35,8 @@ const Welcome: React.FC = () => {
       
       <FeatureList />
       <DemoVideo />
+      <Testimonials />
+      <FAQSection />
       <WelcomeFooter />
     </div>
   );

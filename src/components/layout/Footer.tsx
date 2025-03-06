@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
               onClick={() => window.location.hash = 'faq'}
             >
               <HelpCircle size={12} className="mr-1.5 animate-pulse-slow" />
-              <span className="group-hover:underline">FAQ</span>
+              <span className="group-hover:underline">Full FAQ</span>
             </Button>
           </div>
         </div>
@@ -110,7 +110,17 @@ const Footer: React.FC = () => {
               onClick={() => window.location.hash = 'faq'}
             >
               <HelpCircle className="mr-2 h-4 w-4" />
-              View FAQ
+              View Full FAQ
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="sm"
+              className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground"
+              onClick={() => window.location.hash = 'faqs'}
+            >
+              <HelpCircle className="mr-2 h-4 w-4" />
+              Quick FAQs
             </Button>
           </div>
         </div>

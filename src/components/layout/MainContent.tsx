@@ -22,9 +22,21 @@ const MainContent: React.FC = () => {
       if (window.location.hash === '#faq') {
         setShowFAQ(true);
         setShowDisclaimer(false);
+        // Scroll to top when opening full FAQ
+        window.scrollTo(0, 0);
       } else if (window.location.hash === '#disclaimer') {
         setShowFAQ(false);
         setShowDisclaimer(true);
+        // Scroll to top when opening disclaimer
+        window.scrollTo(0, 0);
+      } else if (window.location.hash === '#faqs') {
+        // Scroll to FAQ section
+        const faqSection = document.getElementById('faqs');
+        if (faqSection) {
+          faqSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        setShowFAQ(false);
+        setShowDisclaimer(false);
       } else {
         setShowFAQ(false);
         setShowDisclaimer(false);

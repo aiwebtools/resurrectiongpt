@@ -67,15 +67,27 @@ const WelcomeFooter: React.FC = () => {
           <span className="group-hover:underline">Terms of Service</span>
         </a>
 
-        <Button 
-          variant="outline"
-          size="sm"
-          className="mx-auto bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-normal px-6"
-          onClick={() => window.location.hash = 'faq'}
-        >
-          <HelpCircle size={12} className="mr-2 animate-pulse-slow" />
-          Frequently Asked Questions
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mt-2">
+          <Button 
+            variant="outline"
+            size="sm"
+            className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-normal"
+            onClick={() => window.location.hash = 'faq'}
+          >
+            <HelpCircle size={12} className="mr-2 animate-pulse-slow" />
+            Full FAQ
+          </Button>
+          
+          <Button 
+            variant="outline"
+            size="sm"
+            className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-normal"
+            onClick={() => window.location.hash = 'faqs'}
+          >
+            <HelpCircle size={12} className="mr-2 animate-pulse-slow" />
+            Quick FAQs
+          </Button>
+        </div>
       </div>
       
       <p className="text-xs text-resurrection-foreground/60">
