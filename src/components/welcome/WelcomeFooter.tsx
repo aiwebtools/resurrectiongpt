@@ -74,35 +74,35 @@ const WelcomeFooter: React.FC = () => {
           <span className="group-hover:underline">Terms of Service</span>
         </a>
 
-        <div className="flex flex-wrap gap-3 justify-center mt-2">
+        <div className="flex flex-wrap gap-2 justify-center mt-2">
           <Button 
             variant="outline"
             size="sm"
-            className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-medium"
+            className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-medium text-xs py-1 px-2 h-auto"
             onClick={() => window.location.hash = 'faq'}
           >
-            <HelpCircle size={12} className="mr-2 animate-pulse-slow" />
-            Full FAQ
+            <HelpCircle size={10} className="mr-1 animate-pulse-slow" />
+            <span>Full FAQ</span>
           </Button>
           
           <Button 
             variant="outline"
             size="sm"
-            className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-medium"
+            className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-medium text-xs py-1 px-2 h-auto"
             onClick={() => scrollToSection('faqs')}
           >
-            <HelpCircle size={12} className="mr-2 animate-pulse-slow" />
-            Quick FAQs
+            <HelpCircle size={10} className="mr-1 animate-pulse-slow" />
+            <span>Quick FAQs</span>
           </Button>
           
           <Button 
             variant="outline"
             size="sm"
-            className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-medium"
+            className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-medium text-xs py-1 px-2 h-auto"
             onClick={() => scrollToSection('testimonials')}
           >
-            <MessageSquareQuote size={12} className="mr-2 animate-pulse-slow" />
-            Testimonials
+            <MessageSquareQuote size={10} className="mr-1 animate-pulse-slow" />
+            <span>Testimonials</span>
           </Button>
         </div>
       </div>

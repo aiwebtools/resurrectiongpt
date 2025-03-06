@@ -25,17 +25,17 @@ const ToolAccess: React.FC = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
-            className="bg-resurrection-primary hover:bg-resurrection-secondary text-white font-medium px-8 py-6 text-lg btn-glow animate-glow"
+            className="bg-resurrection-primary hover:bg-resurrection-secondary text-white font-medium px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base btn-glow animate-glow"
             onClick={() => window.open("https://chatgpt.com/g/g-dfGHDaPWK-resurrection-gpt", "_blank")}
           >
-            <Sparkles className="mr-2" />
-            Experience Resurrection GPT
-            <ArrowRight className="ml-2" />
+            <Sparkles className="mr-1 sm:mr-2 h-4 w-4" />
+            <span>Experience Resurrection GPT</span>
+            <ArrowRight className="ml-1 sm:ml-2 h-4 w-4" />
           </Button>
           
           <Button
             variant="outline"
-            className="border-resurrection-primary/40 text-resurrection-foreground bg-resurrection-background/50 hover:bg-resurrection-primary/20 px-8 py-6 text-lg font-medium"
+            className="border-resurrection-primary/40 text-resurrection-foreground bg-resurrection-background/50 hover:bg-resurrection-primary/20 px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-medium"
             onClick={() => {
               const faqsSection = document.getElementById('faqs');
               if (faqsSection) {
@@ -43,8 +43,8 @@ const ToolAccess: React.FC = () => {
               }
             }}
           >
-            <HelpCircle className="mr-2" />
-            Learn More in FAQs
+            <HelpCircle className="mr-1 sm:mr-2 h-4 w-4" />
+            <span>Learn More in FAQs</span>
           </Button>
         </div>
         
