@@ -89,16 +89,6 @@ const WelcomeFooter: React.FC = () => {
             variant="outline"
             size="sm"
             className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-medium text-xs py-1 px-2 h-auto"
-            onClick={() => scrollToSection('faqs')}
-          >
-            <HelpCircle size={10} className="mr-1 animate-pulse-slow" />
-            <span>Quick FAQs</span>
-          </Button>
-          
-          <Button 
-            variant="outline"
-            size="sm"
-            className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-medium text-xs py-1 px-2 h-auto"
             onClick={() => scrollToSection('testimonials')}
           >
             <MessageSquareQuote size={10} className="mr-1 animate-pulse-slow" />

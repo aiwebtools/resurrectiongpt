@@ -114,16 +114,6 @@ const Footer: React.FC = () => {
               variant="outline"
               size="sm"
               className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-medium"
-              onClick={() => scrollToSection('faqs')}
-            >
-              <HelpCircle className="mr-2 h-4 w-4" />
-              Quick FAQs
-            </Button>
-            
-            <Button
-              variant="outline"
-              size="sm"
-              className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground font-medium"
               onClick={() => scrollToSection('testimonials')}
             >
               <MessageSquareQuote className="mr-2 h-4 w-4" />
