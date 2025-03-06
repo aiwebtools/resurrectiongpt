@@ -64,13 +64,15 @@ const Footer: React.FC = () => {
               <ExternalLink size={12} className="mr-1.5 group-hover:rotate-45 transition-transform duration-300" />
               <span className="group-hover:underline">Terms of Service</span>
             </a>
-            <a 
-              href="#faq" 
-              className="hover:text-resurrection-primary transition-colors duration-300 group flex items-center"
+            <Button 
+              variant="ghost"
+              size="sm"
+              className="hover:text-resurrection-primary hover:bg-resurrection-primary/10 transition-colors duration-300 text-xs h-auto p-0 pl-0"
+              onClick={() => window.location.hash = 'faq'}
             >
-              <HelpCircle size={12} className="mr-1.5 group-hover:animate-pulse-slow" />
+              <HelpCircle size={12} className="mr-1.5 animate-pulse-slow" />
               <span className="group-hover:underline">FAQ</span>
-            </a>
+            </Button>
           </div>
         </div>
         
@@ -84,7 +86,7 @@ const Footer: React.FC = () => {
             © 2025 AI WEB TOOLS LLC. All rights reserved.
           </a>
           
-          <div>
+          <div className="flex flex-col sm:flex-row gap-3 items-center">
             <a 
               href="https://www.aiwebtools.ai" 
               target="_blank"
@@ -100,6 +102,16 @@ const Footer: React.FC = () => {
                 AI TOOL MAINFRAME
               </Button>
             </a>
+            
+            <Button
+              variant="secondary"
+              size="sm"
+              className="bg-resurrection-primary hover:bg-resurrection-primary/80 text-white"
+              onClick={() => window.location.hash = 'faq'}
+            >
+              <HelpCircle className="mr-2 h-4 w-4" />
+              View FAQ
+            </Button>
           </div>
         </div>
         
