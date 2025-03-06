@@ -37,9 +37,10 @@ const Testimonials: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="w-full max-w-4xl mx-auto mt-16"
+      id="testimonials"
     >
       <div className="glass-card rounded-xl p-8 md:p-10 shadow-xl dark-glow">
-        <h2 className="text-2xl md:text-3xl font-serif text-resurrection-foreground text-gradient-animate flex items-center justify-center mb-8">
+        <h2 className="text-2xl md:text-3xl font-serif font-semibold text-resurrection-foreground text-gradient-animate flex items-center justify-center mb-8">
           <MessageSquareQuote className="mr-2 text-resurrection-accent" />
           Healing Testimonials
         </h2>
@@ -60,7 +61,7 @@ const Testimonials: React.FC = () => {
                   </div>
                   <div className="ml-3">
                     <h3 className="font-medium text-resurrection-primary">{testimonial.name}</h3>
-                    <p className="text-xs text-resurrection-foreground/70">{testimonial.relation}</p>
+                    <p className="text-xs text-resurrection-foreground/70 font-medium">{testimonial.relation}</p>
                   </div>
                 </div>
                 <div className="flex">
@@ -69,7 +70,7 @@ const Testimonials: React.FC = () => {
                   ))}
                 </div>
               </div>
-              <p className="text-sm italic text-resurrection-foreground/80">
+              <p className="text-sm italic text-resurrection-foreground/90 leading-relaxed">
                 "{testimonial.quote}"
               </p>
             </motion.div>
@@ -77,7 +78,7 @@ const Testimonials: React.FC = () => {
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-resurrection-foreground/70 text-sm">
+          <p className="text-resurrection-foreground/80 text-sm font-medium mb-4">
             These testimonials represent the experiences of individuals who have used Resurrection GPT.
             <br />
             Results may vary as each spiritual connection is uniquely personal.

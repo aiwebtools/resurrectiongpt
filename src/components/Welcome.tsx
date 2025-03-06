@@ -3,15 +3,16 @@ import React from "react";
 import { useResurrection } from "@/context/ResurrectionContext";
 import { motion } from "framer-motion";
 
-// Import new components
+// Import components
 import WelcomeHeader from "./welcome/WelcomeHeader";
 import HowItWorks from "./welcome/HowItWorks";
 import CTAButtons from "./welcome/CTAButtons";
 import FeatureList from "./welcome/FeatureList";
 import DemoVideo from "./welcome/DemoVideo";
-import WelcomeFooter from "./welcome/WelcomeFooter";
 import Testimonials from "./Testimonials";
+import ToolAccess from "./welcome/ToolAccess";
 import FAQSection from "./FAQSection";
+import WelcomeFooter from "./welcome/WelcomeFooter";
 
 const Welcome: React.FC = () => {
   const { setStage } = useResurrection();
@@ -36,6 +37,7 @@ const Welcome: React.FC = () => {
       <FeatureList />
       <DemoVideo />
       <Testimonials />
+      <ToolAccess />
       <FAQSection />
       <WelcomeFooter />
     </div>

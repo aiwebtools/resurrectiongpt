@@ -39,7 +39,7 @@ const FAQSection: React.FC = () => {
       id="faqs"
     >
       <div className="glass-card rounded-xl p-8 md:p-10 shadow-xl dark-glow">
-        <h2 className="text-2xl md:text-3xl font-serif text-resurrection-foreground text-gradient-animate flex items-center justify-center mb-8">
+        <h2 className="text-2xl md:text-3xl font-serif font-semibold text-resurrection-foreground text-gradient-animate flex items-center justify-center mb-8">
           <HelpCircle className="mr-2 text-resurrection-accent" />
           Frequently Asked Questions
         </h2>
@@ -65,7 +65,7 @@ const FAQSection: React.FC = () => {
                 )}
               </button>
               {openIndex === index && (
-                <div className="p-4 pt-0 text-sm text-resurrection-foreground/80 border-t border-resurrection-primary/10">
+                <div className="p-4 pt-0 text-sm text-resurrection-foreground/90 border-t border-resurrection-primary/10 leading-relaxed font-medium">
                   {faq.answer}
                 </div>
               )}
@@ -74,21 +74,21 @@ const FAQSection: React.FC = () => {
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-resurrection-foreground/70 mb-4">
+          <p className="text-resurrection-foreground/80 mb-4 font-medium">
             Have more questions? View our full FAQ or contact our support team:
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               variant="outline"
               onClick={() => window.location.hash = 'faq'}
-              className="border-resurrection-primary/30 text-resurrection-primary hover:bg-resurrection-primary/10"
+              className="border-resurrection-primary/30 text-resurrection-primary hover:bg-resurrection-primary/10 font-medium"
             >
               <HelpCircle className="mr-2 h-4 w-4" />
               View Full FAQ
             </Button>
             <a
               href="mailto:support@ai-webtools.com"
-              className="inline-flex items-center text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300"
+              className="inline-flex items-center text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 font-medium"
             >
               <ExternalLink className="h-4 w-4 mr-1" />
               Contact Support

@@ -16,15 +16,15 @@ const ResurrectionHeader: React.FC = () => {
           <div className="text-center">
             <h1 
               className={cn(
-                "text-2xl md:text-5xl font-serif font-light",
-                "tracking-wide text-resurrection-foreground mb-1 md:mb-2",
+                "text-2xl md:text-5xl font-serif font-medium",
+                "tracking-wider text-resurrection-foreground mb-1 md:mb-2",
                 "animate-fade-in flex items-center justify-center"
               )}
             >
               <span className="text-gradient-animate mr-1 md:mr-2">🔮</span> 
               <span>Resurrection</span>
               <Cross className="mx-1 md:mx-2 text-resurrection-accent h-5 w-5 md:h-8 md:w-8 animate-pulse-slow" />
-              <span className="text-resurrection-primary font-normal">GPT</span>
+              <span className="text-resurrection-primary font-semibold">GPT</span>
             </h1>
             
             <a 
@@ -32,7 +32,7 @@ const ResurrectionHeader: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "text-xs text-resurrection-foreground/60",
+                "text-xs text-resurrection-foreground/70 font-medium",
                 "hover:text-resurrection-primary transition-colors duration-300",
                 "animate-fade-in mb-2 md:mb-3 inline-block"
               )}
@@ -80,7 +80,7 @@ const ResurrectionHeader: React.FC = () => {
         
         {stage === "welcome" && (
           <div className="animate-fade-in max-w-lg mx-auto px-2">
-            <p className="text-resurrection-foreground/80 text-xs sm:text-sm md:text-base">
+            <p className="text-resurrection-foreground/80 text-xs sm:text-sm md:text-base font-medium">
               Reconnect with the memories and spirit of your departed loved ones through meaningful conversation.
             </p>
             <p className="text-resurrection-foreground/60 text-[10px] sm:text-xs italic mt-1">
