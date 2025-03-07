@@ -6,9 +6,9 @@ import MainContent from "@/components/layout/MainContent";
 import Particles from "@/components/Particles";
 
 const Index: React.FC = () => {
-  // Add some dynamic page title updates
+  // Update the page title to better reflect the tool's name
   useEffect(() => {
-    document.title = "Resurrection GPT | Healing Through Connection";
+    document.title = "Spirit Bridge | Connect With Loved Ones Beyond";
   }, []);
 
   return (
