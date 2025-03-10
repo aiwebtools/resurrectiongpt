@@ -44,12 +44,24 @@ const DisclaimerPopup: React.FC<DisclaimerPopupProps> = ({ onAccept, onClose, is
                 <X size={20} />
               </button>
               
-              {/* Title */}
-              <div className="flex items-center gap-3 mb-4">
-                <AlertTriangle className="h-7 w-7 text-yellow-500 flex-shrink-0" />
-                <h2 className="font-serif font-semibold text-2xl text-resurrection-foreground bg-gradient-to-r from-yellow-300 via-resurrection-accent to-resurrection-primary bg-clip-text text-transparent">
-                  Disclaimer
-                </h2>
+              {/* Title and Accept Button */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <AlertTriangle className="h-7 w-7 text-yellow-500 flex-shrink-0" />
+                  <h2 className="font-serif font-semibold text-2xl text-resurrection-foreground bg-gradient-to-r from-yellow-300 via-resurrection-accent to-resurrection-primary bg-clip-text text-transparent">
+                    Disclaimer
+                  </h2>
+                </div>
+                <Button
+                  onClick={onAccept}
+                  className="bg-gradient-to-r from-resurrection-primary to-resurrection-accent hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-resurrection-primary/20 hover:shadow-xl group"
+                  size="sm"
+                >
+                  <span className="relative flex items-center justify-center gap-1 text-white font-medium z-10">
+                    <Check className="h-4 w-4 transition-transform group-hover:scale-110" />
+                    I AGREE
+                  </span>
+                </Button>
               </div>
               
               {/* Content */}
@@ -67,19 +79,6 @@ const DisclaimerPopup: React.FC<DisclaimerPopupProps> = ({ onAccept, onClose, is
                 <p className="text-resurrection-foreground/90 text-sm italic">
                   For the full legal disclaimer, please visit our <a href="#disclaimer" className="text-resurrection-primary hover:text-resurrection-accent underline">detailed terms</a>.
                 </p>
-              </div>
-              
-              {/* Button */}
-              <div className="mt-6 flex justify-center">
-                <Button
-                  onClick={onAccept}
-                  className="w-full bg-gradient-to-r from-resurrection-primary to-resurrection-accent hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-resurrection-primary/20 hover:shadow-xl group"
-                >
-                  <span className="relative flex items-center justify-center gap-2 text-white font-medium z-10 py-1">
-                    <Check className="h-5 w-5 transition-transform group-hover:scale-110" />
-                    I UNDERSTAND & AGREE
-                  </span>
-                </Button>
               </div>
             </div>
           </motion.div>
