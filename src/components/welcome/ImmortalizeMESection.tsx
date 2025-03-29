@@ -1,9 +1,9 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Play, MessageSquare, ShieldCheck, Users, FileText, Clock, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const ImmortalizeMESection: React.FC = () => {
   return (
@@ -28,15 +28,17 @@ const ImmortalizeMESection: React.FC = () => {
         
         {/* Video Section */}
         <div className="mb-10 rounded-lg overflow-hidden glass-card border border-resurrection-primary/20">
-          <div className="aspect-w-16 aspect-h-9 relative">
-            <iframe 
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/JXLqPMfw49Y?rel=0" 
-              title="ImmortalizeMe Service Overview"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
+          <div className="w-full">
+            <AspectRatio ratio={16 / 9} className="bg-muted">
+              <iframe 
+                className="w-full h-full object-cover"
+                src="https://www.youtube.com/embed/JXLqPMfw49Y?rel=0" 
+                title="ImmortalizeMe Service Overview"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+                loading="lazy"
+              ></iframe>
+            </AspectRatio>
           </div>
           <div className="bg-resurrection-background/80 p-3 text-center">
             <p className="text-sm text-resurrection-foreground/80">
