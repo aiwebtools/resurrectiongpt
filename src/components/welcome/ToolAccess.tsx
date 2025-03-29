@@ -34,6 +34,16 @@ const ToolAccess: React.FC = () => {
           </Button>
           
           <Button
+            variant="secondary"
+            className="bg-resurrection-accent/80 hover:bg-resurrection-accent text-white font-medium px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base"
+            onClick={() => window.open("https://immortalizeme.lovable.app/?via=aiwebtools", "_blank")}
+          >
+            <ExternalLink className="mr-1 sm:mr-2 h-4 w-4" />
+            <span>ImmortalizeME</span>
+            <ArrowRight className="ml-1 sm:ml-2 h-4 w-4" />
+          </Button>
+          
+          <Button
             variant="outline"
             className="border-resurrection-primary/40 text-resurrection-foreground bg-resurrection-background/50 hover:bg-resurrection-primary/20 px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-medium"
             onClick={() => {
