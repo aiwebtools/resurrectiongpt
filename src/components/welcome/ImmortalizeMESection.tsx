@@ -26,6 +26,25 @@ const ImmortalizeMESection: React.FC = () => {
           </p>
         </div>
         
+        {/* Video Section */}
+        <div className="mb-10 rounded-lg overflow-hidden glass-card border border-resurrection-primary/20">
+          <div className="aspect-w-16 aspect-h-9 relative">
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/JXLqPMfw49Y?rel=0" 
+              title="ImmortalizeMe Service Overview"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div className="bg-resurrection-background/80 p-3 text-center">
+            <p className="text-sm text-resurrection-foreground/80">
+              Learn how ImmortalizeMe preserves your voice and personality for future generations
+            </p>
+          </div>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           <div className="bg-resurrection-background/80 border border-resurrection-primary/20 rounded-lg p-6 glass-card">
             <h3 className="text-xl font-serif font-medium text-resurrection-foreground mb-4">Your Digital Legacy</h3>
