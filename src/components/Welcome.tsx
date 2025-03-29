@@ -13,6 +13,7 @@ import Testimonials from "./Testimonials";
 import ToolAccess from "./welcome/ToolAccess";
 import FAQSection from "./FAQSection";
 import WelcomeFooter from "./welcome/WelcomeFooter";
+import ImmortalizeMESection from "./welcome/ImmortalizeMESection";
 
 const Welcome: React.FC = () => {
   const { setStage } = useResurrection();
@@ -37,6 +38,7 @@ const Welcome: React.FC = () => {
       <FeatureList />
       <DemoVideo />
       <Testimonials />
+      <ImmortalizeMESection />
       <ToolAccess />
       <FAQSection />
       <WelcomeFooter />
