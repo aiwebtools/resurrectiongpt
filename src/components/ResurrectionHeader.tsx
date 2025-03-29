@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useResurrection } from "@/context/ResurrectionContext";
-import { Cross, Home, AlertTriangle } from "lucide-react";
+import { Cross, Home, AlertTriangle, ExternalLink, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -9,11 +9,19 @@ import { cn } from "@/lib/utils";
 const ResurrectionHeader: React.FC = () => {
   const { stage } = useResurrection();
 
+  const handleResurrectionClick = () => {
+    window.open("https://chatgpt.com/g/g-dfGHDaPWK-resurrection-gpt", "_blank");
+  };
+
+  const handleImmortalizeClick = () => {
+    window.open("https://immortalizeme.lovable.app/?via=aiwebtools", "_blank");
+  };
+
   return (
     <header className="w-full py-4 md:py-6 px-3 md:px-4 relative z-10">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center mb-3 md:mb-4">
-          <div className="text-center">
+        <div className="flex flex-col md:flex-row md:justify-between items-center mb-3 md:mb-4">
+          <div className="text-center mb-4 md:mb-0">
             <h1 
               className={cn(
                 "text-2xl md:text-5xl font-serif font-medium",
@@ -41,7 +49,26 @@ const ResurrectionHeader: React.FC = () => {
             </a>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row items-center gap-3 mb-3 md:mb-0">
+            <Button
+              className="bg-resurrection-primary hover:bg-resurrection-secondary text-white btn-glow animate-glow w-full sm:w-auto"
+              onClick={handleResurrectionClick}
+            >
+              <ExternalLink className="mr-2 h-4 w-4" />
+              <span>USE RESURRECTION GPT NOW</span>
+            </Button>
+            
+            <Button
+              variant="outline"
+              className="border-resurrection-accent/40 text-resurrection-accent bg-resurrection-background/50 hover:bg-resurrection-accent/20 hover:text-resurrection-accent hover:border-resurrection-accent w-full sm:w-auto"
+              onClick={handleImmortalizeClick}
+            >
+              <Sparkles className="mr-2 h-4 w-4" />
+              <span>IMMORTALIZEME</span>
+            </Button>
+          </div>
+          
+          <div className="flex items-center gap-2 mt-2 md:mt-0">
             <Button
               variant="ghost"
               size="icon"
