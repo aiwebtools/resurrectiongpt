@@ -32,7 +32,7 @@ const ImmortalizeMESection: React.FC = () => {
             <AspectRatio ratio={16 / 9} className="bg-muted">
               <iframe 
                 className="w-full h-full object-cover"
-                src="https://www.youtube.com/embed/JXLqPMfw49Y?rel=0" 
+                src="https://www.youtube.com/embed/NWhi0O8OrNA?rel=0" 
                 title="ImmortalizeMe Service Overview"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen
