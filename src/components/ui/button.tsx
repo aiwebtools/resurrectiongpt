@@ -6,7 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 relative overflow-hidden group",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 relative overflow-hidden group border-2 border-yellow-400 shadow-[0_0_15px_rgba(251,191,36,0.6),inset_0_0_15px_rgba(251,191,36,0.2)] hover:shadow-[0_0_25px_rgba(251,191,36,0.8),inset_0_0_25px_rgba(251,191,36,0.3)] hover:border-yellow-300",
   {
     variants: {
       variant: {
@@ -14,11 +14,11 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-md hover:shadow-lg hover:scale-105",
         outline:
-          "border border-input bg-background/50 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground hover:border-accent hover:scale-102 hover:shadow-lg",
+          "border-yellow-400 bg-background/50 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground hover:border-yellow-300 hover:scale-102 hover:shadow-lg",
         secondary:
           "bg-gradient-to-r from-resurrection-secondary to-resurrection-accent text-secondary-foreground hover:shadow-xl hover:shadow-resurrection-secondary/40 hover:scale-105",
-        ghost: "hover:bg-accent hover:text-accent-foreground hover:scale-102",
-        link: "text-primary underline-offset-4 hover:underline hover:scale-105",
+        ghost: "border-yellow-400/60 hover:bg-accent hover:text-accent-foreground hover:scale-102 hover:border-yellow-400",
+        link: "border-transparent text-primary underline-offset-4 hover:underline hover:scale-105 shadow-none hover:shadow-none",
       },
       size: {
         default: "h-10 px-4 py-2",
