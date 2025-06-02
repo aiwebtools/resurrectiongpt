@@ -23,25 +23,73 @@ const Welcome: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto text-center">
+    <div className="w-full max-w-6xl mx-auto text-center divine-spacing">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="glass-card rounded-xl p-8 md:p-10 shadow-xl dark-glow"
+        initial={{ opacity: 0, y: 30, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="glass-card rounded-2xl divine-padding shadow-2xl dark-glow ethereal-border"
       >
         <WelcomeHeader />
         <HowItWorks />
         <CTAButtons handleBegin={handleBegin} />
       </motion.div>
       
-      <FeatureList />
-      <DemoVideo />
-      <Testimonials />
-      <ImmortalizeMESection />
-      <ToolAccess />
-      <FAQSection />
-      <WelcomeFooter />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <FeatureList />
+      </motion.div>
+      
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <DemoVideo />
+      </motion.div>
+      
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+      >
+        <Testimonials />
+      </motion.div>
+      
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+      >
+        <ImmortalizeMESection />
+      </motion.div>
+      
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.0 }}
+      >
+        <ToolAccess />
+      </motion.div>
+      
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.2 }}
+      >
+        <FAQSection />
+      </motion.div>
+      
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.4 }}
+      >
+        <WelcomeFooter />
+      </motion.div>
     </div>
   );
 };

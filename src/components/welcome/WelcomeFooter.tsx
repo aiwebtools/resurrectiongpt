@@ -23,6 +23,12 @@ const WelcomeFooter: React.FC = () => {
 
   return (
     <div className="mt-8 pt-6 border-t border-white/10 text-center">
+      <div className="mb-4 p-3 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg border border-purple-300/20 backdrop-blur-sm">
+        <p className="text-xs text-resurrection-foreground/80 font-medium">
+          ✨ For informational, educational, and research purposes only ✨
+        </p>
+      </div>
+      
       <div className="mb-6">
         <p className="mb-3 text-resurrection-foreground/70 text-sm font-medium">
           Contact Us
@@ -65,7 +71,7 @@ const WelcomeFooter: React.FC = () => {
           <span className="group-hover:underline">Privacy Policy</span>
         </a>
         <a 
-          href="https://aiwebtools.ai/terms-of-services" 
+          href="https://aiwebtools.lovable.app/disclaimers" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-1.5 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group text-xs sm:text-sm font-medium"
