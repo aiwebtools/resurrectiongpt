@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -155,7 +154,7 @@
   }
 
   .letter-paper {
-    @apply bg-white/3 backdrop-blur-lg border border-white/15 shadow-xl relative;
+    @apply bg-white/5 backdrop-blur-lg border border-white/15 shadow-xl relative;
     background-image: 
       linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
