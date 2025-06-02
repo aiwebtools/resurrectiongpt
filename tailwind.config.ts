@@ -64,12 +64,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				resurrection: {
-					primary: '#8B5CF6',
-					secondary: '#6D28D9',
-					accent: '#EC4899',
-					muted: '#1E293B',
-					background: '#0F172A',
-					foreground: '#F8FAFC',
+					primary: '#00BFFF',
+					secondary: '#8A2BE2',
+					accent: '#FF1493',
+					muted: '#1A1A1A',
+					background: '#000000',
+					foreground: '#FFFFFF',
 				}
 			},
 			borderRadius: {
@@ -81,6 +81,7 @@ export default {
 				'300%': '300%',
 			},
 			scale: {
+				'101': '1.01',
 				'102': '1.02',
 			},
 			keyframes: {
@@ -175,10 +176,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 5px rgba(139, 92, 246, 0.8), 0 0 10px rgba(139, 92, 246, 0.5)'
+						boxShadow: '0 0 10px rgba(0, 191, 255, 0.8), 0 0 20px rgba(138, 43, 226, 0.5)'
 					},
 					'50%': {
-						boxShadow: '0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.5)'
+						boxShadow: '0 0 30px rgba(0, 191, 255, 0.9), 0 0 60px rgba(138, 43, 226, 0.7)'
 					}
 				},
 				'text-shimmer': {
@@ -211,7 +212,7 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'text-gradient': 'linear-gradient(90deg, #EC4899, #8B5CF6, #3B82F6)',
+				'text-gradient': 'linear-gradient(90deg, #00BFFF, #8A2BE2, #FF1493)',
 			},
 			transitionDuration: {
 				'2000': '2000ms',
