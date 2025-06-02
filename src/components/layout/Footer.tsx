@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Mail, Phone, Cross, ExternalLink, FileText, HelpCircle, Server, MessageSquareQuote } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -46,13 +47,11 @@ const Footer: React.FC = () => {
           
           <div className="grid grid-cols-2 gap-y-3 gap-x-6 mb-6 md:mb-0">
             <a 
-              href="https://aiwebtools.lovable.app/disclaimers"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#disclaimer" 
               className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group font-medium"
             >
               <FileText size={12} className="mr-1.5 group-hover:animate-pulse-slow" />
-              <span className="group-hover:underline">Disclaimer & Terms</span>
+              <span className="group-hover:underline">Full Disclaimer</span>
             </a>
             <a 
               href="https://openai.com/policies/privacy-policy/" 
@@ -62,6 +61,15 @@ const Footer: React.FC = () => {
             >
               <ExternalLink size={12} className="mr-1.5 group-hover:rotate-45 transition-transform duration-300" />
               <span className="group-hover:underline">Privacy Policy</span>
+            </a>
+            <a 
+              href="https://aiwebtools.ai/terms-of-services" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-resurrection-primary transition-colors duration-300 group flex items-center font-medium"
+            >
+              <ExternalLink size={12} className="mr-1.5 group-hover:rotate-45 transition-transform duration-300" />
+              <span className="group-hover:underline">Terms of Service</span>
             </a>
             <Button 
               variant="ghost"

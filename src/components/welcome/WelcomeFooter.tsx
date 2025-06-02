@@ -23,13 +23,6 @@ const WelcomeFooter: React.FC = () => {
 
   return (
     <div className="mt-8 pt-6 border-t border-white/10 text-center">
-      {/* Small disclaimer */}
-      <div className="mb-6 p-3 rounded-lg bg-gradient-to-r from-resurrection-primary/20 to-resurrection-accent/20 border border-resurrection-primary/30 backdrop-blur-sm">
-        <p className="text-xs text-resurrection-foreground/80 font-medium">
-          For informational, educational, and research purposes only.
-        </p>
-      </div>
-
       <div className="mb-6">
         <p className="mb-3 text-resurrection-foreground/70 text-sm font-medium">
           Contact Us
@@ -56,13 +49,11 @@ const WelcomeFooter: React.FC = () => {
       
       <div className="mb-8 flex flex-col gap-3">
         <a 
-          href="https://aiwebtools.lovable.app/disclaimers"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#disclaimer"
           className="flex items-center justify-center gap-1.5 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group text-xs sm:text-sm font-medium"
         >
           <FileText size={12} className="group-hover:animate-pulse-slow" />
-          <span className="group-hover:underline">Full Disclaimer & Terms</span>
+          <span className="group-hover:underline">Full Disclaimer</span>
         </a>
         <a 
           href="https://openai.com/policies/privacy-policy/" 
@@ -72,6 +63,15 @@ const WelcomeFooter: React.FC = () => {
         >
           <ExternalLink size={12} className="group-hover:rotate-45 transition-transform duration-300" />
           <span className="group-hover:underline">Privacy Policy</span>
+        </a>
+        <a 
+          href="https://aiwebtools.ai/terms-of-services" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-1.5 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group text-xs sm:text-sm font-medium"
+        >
+          <ExternalLink size={12} className="group-hover:rotate-45 transition-transform duration-300" />
+          <span className="group-hover:underline">Terms of Service</span>
         </a>
 
         <div className="flex flex-wrap gap-2 justify-center mt-2">

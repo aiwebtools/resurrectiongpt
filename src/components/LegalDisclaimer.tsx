@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -29,13 +30,6 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({ onClose }) => {
           >
             <X className="h-5 w-5" />
           </Button>
-        </div>
-
-        {/* Small disclaimer at top */}
-        <div className="mb-6 p-3 rounded-lg bg-gradient-to-r from-resurrection-primary/20 to-resurrection-accent/20 border border-resurrection-primary/30 backdrop-blur-sm">
-          <p className="text-sm text-resurrection-foreground/90 font-medium text-center">
-            For informational, educational, and research purposes only.
-          </p>
         </div>
 
         <div className="space-y-6 text-resurrection-foreground/90">
