@@ -44,8 +44,9 @@ const ResurrectionHeader: React.FC = () => {
                 "hover:text-resurrection-primary transition-colors duration-300",
                 "animate-fade-in mb-2 md:mb-3 inline-block"
               )}
+              title="AI Web Tools - Advanced Artificial Intelligence Tools"
             >
-              Presented by AiWebTools.Ai
+              Powered by AIWebTools.AI - Leading AI Web Tools Platform
             </a>
           </div>
           
@@ -53,6 +54,7 @@ const ResurrectionHeader: React.FC = () => {
             <Button
               className="bg-resurrection-primary hover:bg-resurrection-secondary text-white btn-glow animate-glow w-full sm:w-auto"
               onClick={handleResurrectionClick}
+              title="Access Resurrection GPT - Advanced AI Tool for Spiritual Connection"
             >
               <ExternalLink className="mr-2 h-4 w-4" />
               <span>USE RESURRECTION GPT NOW</span>
@@ -62,6 +64,7 @@ const ResurrectionHeader: React.FC = () => {
               variant="outline"
               className="border-resurrection-accent/40 text-resurrection-accent bg-resurrection-background/50 hover:bg-resurrection-accent/20 hover:text-resurrection-accent hover:border-resurrection-accent w-full sm:w-auto"
               onClick={handleImmortalizeClick}
+              title="ImmortalizeME - AI-Powered Legacy Tool"
             >
               <Sparkles className="mr-2 h-4 w-4" />
               <span>IMMORTALIZEME</span>
@@ -79,6 +82,7 @@ const ResurrectionHeader: React.FC = () => {
                 "hover:bg-resurrection-background/20",
                 "border border-resurrection-primary/20"
               )}
+              title="Legal Disclaimer - AI Web Tools"
             >
               <a href="#disclaimer">
                 <AlertTriangle className="h-4 w-4 md:h-5 md:w-5 text-yellow-500" />
@@ -96,10 +100,11 @@ const ResurrectionHeader: React.FC = () => {
                 "hover:bg-resurrection-background/20",
                 "border border-resurrection-primary/20"
               )}
+              title="Home - AI Web Tools Platform"
             >
               <Link to="/">
                 <Home className="h-4 w-4 md:h-5 md:w-5" />
-                <span className="sr-only">Home</span>
+                <span className="sr-only">Home - AI Web Tools</span>
               </Link>
             </Button>
           </div>
@@ -108,10 +113,10 @@ const ResurrectionHeader: React.FC = () => {
         {stage === "welcome" && (
           <div className="animate-fade-in max-w-lg mx-auto px-2">
             <p className="text-resurrection-foreground/80 text-xs sm:text-sm md:text-base font-medium">
-              Reconnect with the memories and spirit of your departed loved ones through meaningful conversation.
+              Advanced AI web tools for spiritual connections. Reconnect with departed loved ones through cutting-edge artificial intelligence technology.
             </p>
             <p className="text-resurrection-foreground/60 text-[10px] sm:text-xs italic mt-1">
-              This AI tool is not a replacement for professional grief counseling or therapy.
+              Professional AI tools for emotional healing and grief support. Not a replacement for medical advice.
             </p>
           </div>
         )}
