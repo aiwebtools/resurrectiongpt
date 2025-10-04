@@ -8,12 +8,12 @@ import Particles from "@/components/Particles";
 const Index: React.FC = () => {
   // Update the page title with SEO-optimized keywords
   useEffect(() => {
-    document.title = "AI Web Tools | Resurrection GPT - Advanced AI Tools for Spiritual Connection | AIWebTools.AI";
+    document.title = "Resurrection GPT - AI Tool for Spiritual Connections with Departed Loved Ones | AIWebTools.AI";
     
     // Add additional meta tags for better SEO
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Discover cutting-edge AI web tools at AIWebTools.AI. Experience Resurrection GPT - the most advanced AI tool for spiritual connections with departed loved ones. Free AI tools for grief counseling and emotional healing.');
+      metaDescription.setAttribute('content', 'Resurrection GPT uses advanced AI to help you connect with departed loved ones. Experience spiritual healing and emotional support through our free AI tool for grief counseling and remembrance.');
     }
     
     // Add schema markup for breadcrumbs
