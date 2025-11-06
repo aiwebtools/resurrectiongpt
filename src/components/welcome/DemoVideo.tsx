@@ -19,7 +19,7 @@ const DemoVideo: React.FC = () => {
       )}>
         <iframe 
           className="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube.com/embed/nEuxdGO-RZ4?si=YZp3h5AY3KFgH7n4&amp;start=4&amp;autoplay=1&amp;mute=0&amp;controls=1&amp;enablejsapi=1&amp;modestbranding=1&amp;rel=0&amp;hd=1&amp;vq=hd1080&amp;showinfo=0" 
+          src="https://www.youtube.com/embed/xPQMsNdD51k?si=YZp3h5AY3KFgH7n4&amp;start=4&amp;autoplay=1&amp;mute=0&amp;controls=1&amp;enablejsapi=1&amp;modestbranding=1&amp;rel=0&amp;hd=1&amp;vq=hd1080&amp;showinfo=0" 
           title="Resurrection GPT Demo" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
           allowFullScreen

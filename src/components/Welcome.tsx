@@ -40,7 +40,7 @@ const Welcome: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <FeatureList />
+        <DemoVideo />
       </motion.div>
       
       <motion.div
@@ -48,7 +48,7 @@ const Welcome: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        <DemoVideo />
+        <FeatureList />
       </motion.div>
       
       <motion.div
