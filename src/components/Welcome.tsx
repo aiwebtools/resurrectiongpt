@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 // Import components
 import WelcomeHeader from "./welcome/WelcomeHeader";
+import WelcomeContent from "./welcome/WelcomeContent";
 import HowItWorks from "./welcome/HowItWorks";
 import CTAButtons from "./welcome/CTAButtons";
 import FeatureList from "./welcome/FeatureList";
@@ -31,16 +32,10 @@ const Welcome: React.FC = () => {
         className="glass-card rounded-2xl divine-padding shadow-2xl dark-glow ethereal-border"
       >
         <WelcomeHeader />
+        <DemoVideo />
+        <WelcomeContent />
         <HowItWorks />
         <CTAButtons handleBegin={handleBegin} />
-      </motion.div>
-      
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <DemoVideo />
       </motion.div>
       
       <motion.div
