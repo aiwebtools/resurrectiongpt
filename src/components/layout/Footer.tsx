@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row gap-3 items-center">
             <a 
-              href="https://www.aiwebtools.ai" 
+              href="https://aiwebtools.lovable.app/?via=aiwebtools" 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
