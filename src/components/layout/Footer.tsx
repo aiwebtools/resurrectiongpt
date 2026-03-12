@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
               </h2>
             </div>
             <a 
-              href="https://www.aiwebtools.ai"
+              href="https://aiwebtools.lovable.app/?via=aiwebtools"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-resurrection-foreground/70 hover:text-resurrection-primary transition-colors duration-300 mt-1 inline-block font-medium"
