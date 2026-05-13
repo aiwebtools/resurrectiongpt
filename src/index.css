@@ -44,6 +44,11 @@
     @apply border-border;
   }
 
+  html {
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+  }
+
   body {
     @apply bg-black text-white font-sans antialiased;
     -webkit-tap-highlight-color: transparent;
@@ -52,6 +57,17 @@
     animation: darkGradient 20s ease infinite;
     position: relative;
     overflow-x: hidden;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  /* Reduce heavy fixed-position animated layers on mobile so finger scrolling stays smooth */
+  @media (max-width: 768px) {
+    body::before,
+    body::after {
+      animation: none !important;
+    }
   }
 
   body::before {
