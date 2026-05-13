@@ -160,10 +160,10 @@ const LetterFromHeaven: React.FC = () => {
         </p>
         <div className="mt-2 flex justify-center gap-4 items-center">
           <a 
-            href="mailto:support@ai-webtools.com" 
+            href="mailto:contact@ai-webtools.com" 
             className="text-xs text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300"
           >
-            support@ai-webtools.com
+            contact@ai-webtools.com
           </a>
           <span className="text-resurrection-foreground/30">|</span>
           <a 

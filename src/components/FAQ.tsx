@@ -40,7 +40,7 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
     },
     {
       question: "How do I contact support if I have problems or questions?",
-      answer: "You can reach our support team via email at support@ai-webtools.com or by phone at (475) 800-8096. We're here to help with any questions or concerns you may have about your experience."
+      answer: "You can reach our support team via email at contact@ai-webtools.com or by phone at (475) 800-8096. We're here to help with any questions or concerns you may have about your experience."
     },
   ];
 
@@ -134,11 +134,11 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:support@ai-webtools.com"
+              href="mailto:contact@ai-webtools.com"
               className="flex items-center text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300"
             >
               <ExternalLink className="h-4 w-4 mr-1" />
-              support@ai-webtools.com
+              contact@ai-webtools.com
             </a>
             <a
               href="tel:+14758008096"

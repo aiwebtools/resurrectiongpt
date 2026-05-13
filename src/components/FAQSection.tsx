@@ -87,7 +87,7 @@ const FAQSection: React.FC = () => {
               View Full FAQ
             </Button>
             <a
-              href="mailto:support@ai-webtools.com"
+              href="mailto:contact@ai-webtools.com"
               className="inline-flex items-center text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 font-medium"
             >
               <ExternalLink className="h-4 w-4 mr-1" />
