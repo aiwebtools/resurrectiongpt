@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const Footer: React.FC = () => {
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    window.location.href = "mailto:support@ai-webtools.com";
+    window.location.href = "mailto:contact@ai-webtools.com";
   };
 
   const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -124,12 +124,12 @@ const Footer: React.FC = () => {
         
         <div className="flex flex-col items-center gap-3">
           <a 
-            href="mailto:support@ai-webtools.com" 
+            href="mailto:contact@ai-webtools.com" 
             onClick={handleEmailClick}
             className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group font-medium"
           >
             <Mail size={12} className="mr-1.5 group-hover:translate-y-[-2px] transition-transform duration-300" />
-            <span className="group-hover:underline">support@ai-webtools.com</span>
+            <span className="group-hover:underline">contact@ai-webtools.com</span>
           </a> 
           <a 
             href="tel:+14758008096" 
